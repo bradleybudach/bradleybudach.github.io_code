@@ -14,8 +14,8 @@
     flex-direction: column;
     text-align: center;
     flex: 1;
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 600px;
+    min-width: 35vw;
     margin: 4%;
     background-color: rgba(118, 146, 255, 0.5);
     padding: 20px;
@@ -115,3 +115,10 @@
     padding: 10px;
     text-align: left;
 }
+
+@media only screen and (max-width: 800px) {
+    .project {
+        max-width: 90%;
+        min-width: 300px;
+    }
+  }

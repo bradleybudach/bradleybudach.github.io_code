@@ -79,4 +79,12 @@ const Project = ({title, description, imgSrc}) => {
             </div>;
 }
 
+const ProjectPage = ({title}) => {
+    
+    return <div>
+        <h1>{title}</h1>
+    </div>;
+}
+
+
 export default ProjectsSection;
