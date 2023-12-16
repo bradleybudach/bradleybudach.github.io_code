@@ -11,7 +11,7 @@ const StarsHeader = props => {
         const context = canvas.getContext('2d');
         const displayWidth = visualViewport.width;
         const displayHeight = visualViewport.height;
-        canvas.style.width = displayWidth + 'px';
+        canvas.style.width = '100%';
         canvas.style.height =  displayHeight + 'px';
         canvas.width = displayWidth;
         canvas.height = displayHeight;
