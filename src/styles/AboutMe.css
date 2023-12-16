@@ -1,0 +1,42 @@
+.content-container p {
+    color:white;
+    padding: 40px;
+    font-size: 1.2em;
+    transition-duration: 1s;
+}
+
+.content-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    transition: 1s;
+}
+
+@media only screen and (max-width: 800px) {
+    .content-container {
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .img-container {
+        margin-top: 20px;
+        width: 80%;
+    }
+  }
+
