@@ -3,6 +3,7 @@ import '../styles/AboutMe.css';
 import '../styles/Theme.css';
 import AnimatedStar from './AnimatedStar';
 
+// forwards ref of title back to navigation to allow for scrolling to this section
 const AboutMeSection = forwardRef((props, ref) => {
     const starTarget = useRef(null); // Ref used for AnimatedStar
     const [isComponentVisible, setIsComponentVisible] = useState(false); // visibility used for appearance animations
@@ -12,7 +13,8 @@ const AboutMeSection = forwardRef((props, ref) => {
         setIsComponentVisible(visibility);
     };
 
-    return <div className='section-container' ref={ref}>
+    return (
+        <div className='section-container' ref={ref}>
             <AnimatedStar targetRef={starTarget} startOffset={{X: 200, Y: -200}} animationStartOffset={0} scrollLength={250} callbackRef={starAnimEvent}/>
             <div className='title-container' ref={starTarget}>
                 <div className='title-border' style={{
@@ -23,6 +25,7 @@ const AboutMeSection = forwardRef((props, ref) => {
                         <h2 className='section-title'>ABOUT ME</h2>
                 </div>
             </div>
+            
             <div className='content-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s', transitionDuration: (isComponentVisible) ? '0.5s' : '0s'}}>
                 <div className='img-container'>
                     <img src='/images/profile.png' alt='Profile Image'/>
@@ -35,7 +38,8 @@ const AboutMeSection = forwardRef((props, ref) => {
                     With this experience, my degree, years of self-taught programming skills, and my willingness to always be creative and learn new things, I am the perfect canidate for a Software Development position.
                 </p></div>
             </div>
-        </div>;
+        </div>
+    );
 });
 
 export default AboutMeSection;

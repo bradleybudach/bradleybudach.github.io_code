@@ -3,9 +3,12 @@ import AnimatedStar from './AnimatedStar';
 import '../styles/Contact.css';
 import '../styles/Theme.css';
 
+// forwards ref of title back to navigation to allow for scrolling to this section
 const ContactSection = forwardRef((props, ref) => {
     const starTarget = useRef(null); // Ref used for AnimatedStar
     const [isComponentVisible, setIsComponentVisible] = useState(false); // visibility used for appearance animations
+    
+    // States for user entered text:
     const [name, setName] = useState("");
     const [message, setMessage] = useState("");
 
@@ -20,33 +23,35 @@ const ContactSection = forwardRef((props, ref) => {
     };
 
     return (
-    <div className='section-container' ref={ref}>
-        <AnimatedStar targetRef={starTarget} startOffset={{X: 0, Y: -150}} animationStartOffset={50} scrollLength={300} callbackRef={starAnimEvent}/>
-        <div className='title-container' ref={starTarget}>
-        <div className='title-border' style={{
-                visibility: (isComponentVisible) ? 'visible' : 'hidden',
-                width: (isComponentVisible) ? 200 : 0,
-                transitionDelay: (isComponentVisible) ? '0.5s' : '0s',
-            }}>
-                <h2 className='section-title'>CONTACT ME</h2>
+        <div className='section-container' ref={ref}>
+            <AnimatedStar targetRef={starTarget} startOffset={{X: 0, Y: -150}} animationStartOffset={50} scrollLength={300} callbackRef={starAnimEvent}/>
+            <div className='title-container' ref={starTarget}>
+            <div className='title-border' style={{
+                    visibility: (isComponentVisible) ? 'visible' : 'hidden',
+                    width: (isComponentVisible) ? 200 : 0,
+                    transitionDelay: (isComponentVisible) ? '0.5s' : '0s',
+                }}>
+                    <h2 className='section-title'>CONTACT ME</h2>
+                </div>
+            </div>
+
+            <div className='contact-info' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}}>
+                <form className='contact-form' onSubmit={handleSubmit}>
+                    <h2>Want to get in contact?</h2>
+                    <label>NAME:</label><br/>
+                    <input title='name' name='name' type="text" value={name} onChange={(e) => setName(e.target.value)}/><br/>
+                    <label>MESSAGE:</label><br/>
+                    <textarea title='message' name='message' value={message} onChange={(e) => setMessage(e.target.value)}/><br/>
+                    <HoverButton/>
+                    <br/>
+                </form>
             </div>
         </div>
-        <div className='contact-info' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}}>
-            <form className='contact-form' onSubmit={handleSubmit}>
-                <h2>Want to get in contact?</h2>
-                <label>NAME:</label><br/>
-                <input title='name' name='name' type="text" value={name} onChange={(e) => setName(e.target.value)}/><br/>
-                <label>MESSAGE:</label><br/>
-                <textarea title='message' name='message' value={message} onChange={(e) => setMessage(e.target.value)}/><br/>
-                <HoverButton/>
-                <br/>
-            </form>
-        </div>
-    </div>
     );
 });
 
 
+// Hover button for message submission:
 const HoverButton = () => {
     const [isHovering, setIsHovering] = useState(false); // is this component being hovered
 

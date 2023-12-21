@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import '../styles/StarCanvas.css';
 
-const StarsHeader = props => {
-  
-    const canvasRef = useRef(null);
-    const [stars, setStars] = useState([]);
+const StarsHeader = (props) => {
+    const canvasRef = useRef(null); // ref to canvas
+    const [stars, setStars] = useState([]); // shooting stars to appar over the webpage
 
     const refreshCanvas = () => {
+        // set canvas values:
         const canvas = canvasRef.current
         const context = canvas.getContext('2d');
         const displayWidth = visualViewport.width;
@@ -48,13 +48,13 @@ const StarsHeader = props => {
           );*/
 
         let stars = [];
-        for (let i = 0; i < visualViewport.width/50; i++) {
-            const startPos = {
+        for (let i = 0; i < visualViewport.width/50; i++) { // generates width/50 shooting stars:
+            const startPos = {  // random start loc:
                 X: Math.floor(Math.random()*visualViewport.width-5), 
                 Y: Math.floor(Math.random()*visualViewport.height-5)
             };
 
-            const endPos = {
+            const endPos = { // random end loc within 200px of start:
                 X: startPos.X + Math.floor(Math.random()*200)-100,
                 Y: startPos.Y + Math.floor(Math.random()*200)-100,
             }
@@ -65,34 +65,38 @@ const StarsHeader = props => {
         setStars(stars);
     }
 
-  return ( 
-    <div className='header-container'>
-        <h1 className='header-text'>SOFTWARE DEVELOPER</h1>
-        <canvas className='header-canvas' ref={canvasRef} {...props}/>
-        {stars}
-    </div> 
+    return ( 
+        <div className='header-container'>
+            <h1 className='header-text'>SOFTWARE DEVELOPER</h1>
+            <canvas className='header-canvas' ref={canvasRef} {...props}/>
+            {stars}
+        </div> 
     );
 
     
 }
 
+// Defines shooting star for canvas
 const ShootingStar = ({startPosition, endPosition}) => {
+    // Position states
     const [xPos, setXPos] = useState(startPosition.X);
     const [yPos, setYPos] = useState(startPosition.Y);
 
     const handleScroll = () => {
+        // get distance between start and end
         const differenceX = startPosition.X-endPosition.X;
         const differenceY = startPosition.Y-endPosition.Y;
 
-        const scaleFactor =  Math.max(0, Math.min(100, window.scrollY/3))/100; // factor determines distance between start and end position for animation
+        const scaleFactor =  Math.max(0, Math.min(100, window.scrollY/3))/100; // factor based on scroll to determine animation position
 
-        if (scaleFactor <= 1) {
+        if (scaleFactor <= 1) { // animate star if it is approaching end pos
             setXPos(startPosition.X+(differenceX*scaleFactor));
             setYPos(startPosition.Y+(differenceY*scaleFactor));
         }   
     }
 
     const refreshStars = () => {
+        // refresh all star values on window resize:
         const displayWidth = visualViewport.width;
         const displayHeight = visualViewport.height;
 
@@ -119,11 +123,13 @@ const ShootingStar = ({startPosition, endPosition}) => {
     }, []);
 
     // returns star with small variation in animation transition timing:
-    return <div className='shooting-star' style={{
+    return (
+        <div className='shooting-star' style={{
         left: xPos, 
         top: yPos, 
         transition: 'ease-out ' + (Math.random()*0.5+0.5) + 's'
-    }}/>
+        }}/>
+    );
 
 }
 

@@ -8,6 +8,7 @@
     width: 100%;
     transition: opacity 0.5s;
     justify-content: center;
+    margin: 40px 0px 40px 0px;
 }
 
 .contact-info h2 {

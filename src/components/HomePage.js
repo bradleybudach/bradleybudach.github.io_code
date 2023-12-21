@@ -13,15 +13,16 @@ const Navigation = {
     Contact: "ContactMe"
 };
   
-const scrollOffset = 100; // offsets scroll position to be slighly above target
+const scrollOffset = 100; // offsets scroll position to be slighly above target for navigation
 
+// Home page of the app, contains all main components
 const HomePage = () => {
     // Navigation Refs:
     const aboutMeSectionRef = useRef(null);
     const projectsSectionRef = useRef(null);
     const contactSectionRef = useRef(null);
 
-    const navigate = (target) => {
+    const navigate = (target) => { // scroll to target components
         let y = 0;
 
         switch (target) { // find position of selected target:
@@ -46,15 +47,15 @@ const HomePage = () => {
     return (<>
         <Header navigationFunction={navigate}/>
         <div className='sections'>
-        <AboutMeSection startingPosition={{X: 450, Y: -100}} displayOffset={100} ref={aboutMeSectionRef}/>
-        <ProjectsSection ref={projectsSectionRef}/>
-        <ContactSection ref={contactSectionRef}/>
-        <Footer/>
+            <AboutMeSection ref={aboutMeSectionRef}/>
+            <ProjectsSection ref={projectsSectionRef}/>
+            <ContactSection ref={contactSectionRef}/>
+            <Footer/>
         </div>
     </>);
 };
   
-// Defines header/nav-bar
+// Defines header/nav-bar:
 const Header = ({navigationFunction}) => {
     return (
         <div className='header'>
@@ -68,9 +69,10 @@ const Header = ({navigationFunction}) => {
             </div>
             <StarsHeader/>
         </div>
-    )
+    );
 };
 
+// defines page footer
 const Footer = () => {
     return (
         <div className='footer'>

@@ -25,7 +25,7 @@ const AnimatedStar = ({targetRef, startOffset, animationStartOffset, scrollLengt
         startPosition.current = {
             X: targetPosition.current.X + startOffset.X,
             Y: targetPosition.current.Y + startOffset.Y
-        }
+        };
     }
 
     // update target position on window resize:
@@ -50,17 +50,19 @@ const AnimatedStar = ({targetRef, startOffset, animationStartOffset, scrollLengt
                 callbackRef(false);
             }
             
-            const distanceX = targetPosition.current.X-startPosition.current.X;
+            // distance from start to target:
+            const distanceX = targetPosition.current.X-startPosition.current.X; 
             const distanceY = targetPosition.current.Y-startPosition.current.Y;
             
-            const positionFactor = (scrollLength-(endPos-scrollPos))/scrollLength;
+            const positionFactor = (scrollLength-(endPos-scrollPos))/scrollLength; // gets percentage of distance between start and end for animation
 
+            // animate star:
             setCurrentPosition({
                 X: startPosition.current.X + distanceX*positionFactor,
                 Y: startPosition.current.Y + distanceY*positionFactor
             });
         } else if (scrollPos >= endPos) { // > end position
-            if (!isEnded.current) {// only runs once if not already ended, sends callback
+            if (!isEnded.current) {// only runs once if not already ended, sends completion callback
                 isEnded.current = true;
                 setStarVisible(false);
                 callbackRef(true);
@@ -83,13 +85,15 @@ const AnimatedStar = ({targetRef, startOffset, animationStartOffset, scrollLengt
         }
     }, []);
 
-    return <div className="star" style={{
+    return (
+        <div className="star" style={{
             top: currentPosition.Y,
             left: currentPosition.X,
             visibility: (starVisible) ? 'visible' : 'hidden',
             maxHeight: (starVisible) ? 10 : 0,
             transition: 'ease-out all 0.5s, max-height 0s ' + ((starVisible) ? '0s' : '0.5s'),
-    }}/>
+        }}/>
+    );
 };
 
 export default AnimatedStar;
