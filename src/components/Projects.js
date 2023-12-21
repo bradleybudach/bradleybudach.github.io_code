@@ -5,6 +5,17 @@ import '../styles/Theme.css';
 import { throttle } from 'lodash';
 import { useNavigate } from 'react-router-dom';
 
+const LanguageDictionary = {
+    hmtl: {color: '#D2B48C', text: 'HTML'},
+    css: {color: '#ADD8E6', text: 'CSS'},
+    javascript: {color: '#FFA500', text: 'JS'},
+    java: {color: '#964B00', text: 'Java'},
+    react: {color: '#800000', text: 'React'},
+    reactNative: {color: '#CC7000', text: 'React Native'},
+    cSharp: {color: '#CC8899', text: 'C#'},
+    cPlusPlus: {color: '#00578A', text: 'C++'},
+}
+
 const ProjectsSection = forwardRef((props, ref) => {
     const starTarget = useRef(null); // Ref used for AnimatedStar
     const [isComponentVisible, setIsComponentVisible] = useState(false); // visibility used for appearance animations
@@ -26,16 +37,36 @@ const ProjectsSection = forwardRef((props, ref) => {
             </div>
         </div>
         <div className='projects-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}}>
-            <Project title={'Project Title'} description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} imgSrc={'/images/project1.png'} route={'/Project1'}/>
-            <Project title={'Project Title'} description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} imgSrc={'/images/project1.png'} route={'/Project1'}/>
-            <Project title={'Project Title'} description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} imgSrc={'/images/project1.png'} route={'/Project1'}/>
-            <Project title={'Project Title'} description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} imgSrc={'/images/project1.png'} route={'/Project2'}/>
+            <Project 
+                title={'Project Title'} 
+                description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
+                imgSrc={'/images/project1.png'}
+                languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.java, LanguageDictionary.javascript, LanguageDictionary.react, LanguageDictionary.reactNative, LanguageDictionary.cPlusPlus, LanguageDictionary.cSharp]}
+                route={'/Project1'}/>
+            <Project 
+                title={'Project Title'} 
+                description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
+                imgSrc={'/images/project1.png'}
+                languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
+                route={'/Project1'}/>
+            <Project 
+                title={'Project Title'} 
+                description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
+                imgSrc={'/images/project1.png'}
+                languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
+                route={'/Project1'}/>
+            <Project 
+                title={'Project Title'} 
+                description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
+                imgSrc={'/images/project1.png'}
+                languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
+                route={'/Project2'}/>
         </div>
     </div>;
 });
 
 // Project Component
-const Project = ({title, description, imgSrc, route}) => {
+const Project = ({title, description, imgSrc, languageList, route}) => {
     const navigate = useNavigate();
     const [rotation, setRotation] = useState({}); // rotation for 3d effect
     const [isHovering, setIsHovering] = useState(false); // is this component being hovered
@@ -71,18 +102,34 @@ const Project = ({title, description, imgSrc, route}) => {
         navigate(route);
     };
 
+    return (
+        <div className='project' onClick={routeToProject} onMouseEnter={() => {setIsHovering(true)}} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{transform: `rotateX(${rotation.X}deg) rotateY(${rotation.Y}deg)`}}>
+            <h3 className='project-title'>{title}</h3>
+            <img src={imgSrc} alt='Project Image'/>
+            <p className='description-text'>{description}</p>
 
-    return <div className='project' onClick={routeToProject} onMouseEnter={() => {setIsHovering(true)}} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{transform: `rotateX(${rotation.X}deg) rotateY(${rotation.Y}deg)`}}>
-                <h3 className='project-title'>{title}</h3>
-                <img src={imgSrc}/>
-                <p className='description-text'>{description}</p>
+            <div className='project-bottom-section'>
+                <div className='language-container'>
+                    {
+                        languageList.map(language => {
+                            return (
+                                <div key={language.text} className='language-display'>
+                                    <div className='language-color' style={{backgroundColor: language.color}}/>
+                                    {language.text}
+                                </div>
+                            )
+                        })
+                    }
+                </div>
                 <div className='button-container'>
                     <button className='details-button' style={{paddingRight: (isHovering) ? 30 : 0}}>{'View Details'}</button>
                     <div id='b1' style={{transform: (isHovering) ? 'translate(-15px, 0px)' : 'translate(0px, 0px)'}}/>
                     <div id='b2' style={{transform: (isHovering) ? 'translate(15px, 0px)' : 'translate(0px, 0px)'}}/>
                     <div id='arrow' style={{transform: (isHovering) ? 'translate(50px, 0px)' : 'translate(100px, 0px)'}}>{'\u2BC8'}</div>
                 </div>
-            </div>;
+            </div>
+        </div>
+    );
 }
 
 

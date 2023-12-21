@@ -2,7 +2,7 @@
     color:white;
     padding: 40px;
     font-size: 1.2em;
-    transition-duration: 1s;
+    transition-duration: opacity 1s;
 }
 
 .content-container img {
@@ -23,8 +23,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 80%;
+    margin: 40px 0px 40px 0px;
+    justify-self: center;
+    
     transition: 1s;
 }
 

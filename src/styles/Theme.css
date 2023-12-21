@@ -1,19 +1,9 @@
-html, body {
-    margin: 0;
-    padding: 0;
+body,p {margin:0} /*Overrides any broswer default styles*/
+
+body, html {
     width: 100vw;
-    height: auto;
-    position: relative;
-    overflow-x: hidden;
-};
-  
-.main {
-    width: 100vw;
-    height: 100%;
-    position: relative;
-    overflow-x: hidden;
 }
-  
+
 .sections {
     background-image: linear-gradient(rgb(0, 20, 64), rgb(3,37,126));
 }

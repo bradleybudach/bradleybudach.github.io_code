@@ -35,9 +35,9 @@ const ContactSection = forwardRef((props, ref) => {
             <form className='contact-form' onSubmit={handleSubmit}>
                 <h2>Want to get in contact?</h2>
                 <label>NAME:</label><br/>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)}/><br/>
+                <input title='name' name='name' type="text" value={name} onChange={(e) => setName(e.target.value)}/><br/>
                 <label>MESSAGE:</label><br/>
-                <textarea value={message} onChange={(e) => setMessage(e.target.value)}/><br/>
+                <textarea title='message' name='message' value={message} onChange={(e) => setMessage(e.target.value)}/><br/>
                 <HoverButton/>
                 <br/>
             </form>
@@ -51,7 +51,7 @@ const HoverButton = () => {
     const [isHovering, setIsHovering] = useState(false); // is this component being hovered
 
     return (
-        <div className='button-container' onMouseEnter={() => {setIsHovering(true)}} onMouseLeave={() => {setIsHovering(false)}}>
+        <div className='button-container' style={{margin: 0}} onMouseEnter={() => {setIsHovering(true)}} onMouseLeave={() => {setIsHovering(false)}}>
             <button type='submit' className='details-button' style={{paddingRight: (isHovering) ? 30 : 0}}>{'Email Me'}</button>
             <div id='b1' style={{transform: (isHovering) ? 'translate(-15px, 0px)' : 'translate(0px, 0px)'}}/>
             <div id='b2' style={{transform: (isHovering) ? 'translate(15px, 0px)' : 'translate(0px, 0px)'}}/>

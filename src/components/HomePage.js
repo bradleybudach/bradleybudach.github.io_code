@@ -4,7 +4,7 @@ import StarsHeader from './StarCanvas';
 import AboutMeSection from './AboutMe';
 import ProjectsSection from './Projects';
 import ContactSection from './ContactMe';
-import { forwardRef, useRef } from 'react';
+import { useRef } from 'react';
 
 // nav dictionary:
 const Navigation = {
@@ -38,12 +38,12 @@ const HomePage = () => {
 
         // scroll smoothly to selected target:
         window.scrollTo({
-        top: y,
-        behavior: 'smooth'
+            top: y,
+            behavior: 'smooth'
         });
     }
 
-    return (<div className='main'>
+    return (<>
         <Header navigationFunction={navigate}/>
         <div className='sections'>
         <AboutMeSection startingPosition={{X: 450, Y: -100}} displayOffset={100} ref={aboutMeSectionRef}/>
@@ -51,7 +51,7 @@ const HomePage = () => {
         <ContactSection ref={contactSectionRef}/>
         <Footer/>
         </div>
-    </div>);
+    </>);
 };
   
 // Defines header/nav-bar
@@ -61,9 +61,9 @@ const Header = ({navigationFunction}) => {
             <div className='header-title'>
                 <p>BRADLEY BUDACH</p>
                 <div className='header-buttons'>
-                <p onClick={() => {navigationFunction(Navigation.AboutMe)}}>About Me</p>
-                <p onClick={() => {navigationFunction(Navigation.Projects)}}>Projects</p>
-                <p onClick={() => {navigationFunction(Navigation.Contact)}}>Contact Me</p>
+                    <p onClick={() => {navigationFunction(Navigation.AboutMe)}}>About Me</p>
+                    <p onClick={() => {navigationFunction(Navigation.Projects)}}>Projects</p>
+                    <p onClick={() => {navigationFunction(Navigation.Contact)}}>Contact Me</p>
                 </div>
             </div>
             <StarsHeader/>

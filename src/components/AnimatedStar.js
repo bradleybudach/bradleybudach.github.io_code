@@ -87,6 +87,8 @@ const AnimatedStar = ({targetRef, startOffset, animationStartOffset, scrollLengt
             top: currentPosition.Y,
             left: currentPosition.X,
             visibility: (starVisible) ? 'visible' : 'hidden',
+            maxHeight: (starVisible) ? 10 : 0,
+            transition: 'ease-out all 0.5s, max-height 0s ' + ((starVisible) ? '0s' : '0.5s'),
     }}/>
 };
 

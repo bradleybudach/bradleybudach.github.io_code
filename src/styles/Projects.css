@@ -1,7 +1,7 @@
 .projects-container {
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
+    margin: 40px 0px 40px 0px;
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
@@ -94,13 +94,15 @@
 
 .button-container {
     position: relative;
+    margin-left: auto;
+    align-self: center;
     width: 170px;
+    min-width: 170px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    align-self: self-end;
     border-radius: 35px;
     padding: 0;
     cursor: pointer;
@@ -117,9 +119,51 @@
     text-align: left;
 }
 
+.project-bottom-section {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.language-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.language-display {
+    padding: 2px 15px 2px 15px;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 30px;
+    color: white;
+    background-color: rgba(0, 20, 64, 0.7);
+}
+
+.language-color {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
 @media only screen and (max-width: 800px) {
     .project {
         max-width: 90%;
         min-width: 300px;
+    }
+
+    .project-bottom-section {
+        flex-direction: column-reverse;
+    }
+
+    .button-container {
+        margin: 0px;
+        justify-self: center;
+    }
+
+    .language-display {
+        font-size: 12px;
     }
   }
