@@ -103,6 +103,7 @@
     align-self: self-end;
     border-radius: 35px;
     padding: 0;
+    cursor: pointer;
 }
 
 .description-text {
