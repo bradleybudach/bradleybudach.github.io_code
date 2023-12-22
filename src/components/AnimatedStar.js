@@ -1,5 +1,6 @@
 import { forwardRef, useEffect, useState, useRef } from "react";
-import '../styles/AnimatedStar.css'
+import '../styles/AnimatedStar.css';
+import { throttle } from "lodash";
 
 const AnimatedStar = ({targetRef, startOffset, animationStartOffset, scrollLength, callbackRef}) => {
     const targetPosition = useRef({}); // target component position ref
@@ -29,13 +30,13 @@ const AnimatedStar = ({targetRef, startOffset, animationStartOffset, scrollLengt
     }
 
     // update target position on window resize:
-    const handleWindowResize = () => {
+    const handleWindowResize = throttle(() => {
         if (!targetRef) { // await target ref
             return;
         }
 
         getTargetPosition();
-    }
+    }, 100); // throttle to 100ms for performance
 
     const handleScroll = () => {
         const scrollPos = window.scrollY+window.innerHeight; // current position on page
@@ -83,7 +84,7 @@ const AnimatedStar = ({targetRef, startOffset, animationStartOffset, scrollLengt
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleWindowResize);
         }
-    }, []);
+    }, [targetRef]);
 
     return (
         <div className="star" style={{

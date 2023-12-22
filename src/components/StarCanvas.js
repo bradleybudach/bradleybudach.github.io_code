@@ -17,16 +17,16 @@ const StarsHeader = ({footerReference}) => {
         const canvas = canvasRef.current
         const context = canvas.getContext('2d');
         const displayWidth = visualViewport.width;
-        const displayHeight = visualViewport.height;
+        const displayHeight = footerPosition+100;
         canvas.style.width = '100%';
-        canvas.style.height =  displayHeight + 'px';
+        canvas.style.height =  footerPosition+100 + 'px';
         canvas.width = displayWidth;
         canvas.height = displayHeight;
         context.fillStyle = '#FFFFFF';
 
-        for (let i = 0; i < displayWidth/20; i++) { // draw stars, scales with width (width/20):
+        for (let i = 0; i < displayHeight/20; i++) { // draw stars, scales with width (width/20):
             context.beginPath();
-		    context.arc(Math.floor(Math.random()*displayWidth) + 1, Math.floor(Math.random()*displayHeight) + 1, 2, 0, Math.PI * 2, true);
+		    context.arc(Math.floor(Math.random()*displayWidth) + 1, Math.floor(Math.random()*displayHeight) + 1, 2, 0, Math.PI * 2);
             context.fill();
         }
 
@@ -43,7 +43,7 @@ const StarsHeader = ({footerReference}) => {
         return () => {
             window.removeEventListener('resize', refreshCanvas);
           }
-    }, []);
+    }, [footerReference]);
 
     const getStars = (footerPosition) => {
         // generate/update stars based on footer position
@@ -55,12 +55,15 @@ const StarsHeader = ({footerReference}) => {
         setStars(newStars);
     }
 
-    return ( 
+    return (<> 
         <div className='header-container'>
             <h1 className='header-text'>SOFTWARE DEVELOPER</h1>
+        </div> 
+        <div className='stars-container'>
             <canvas className='header-canvas' ref={canvasRef}/>
             {stars}
-        </div> 
+        </div>
+        </>
     );
 
     
@@ -96,7 +99,7 @@ const ShootingStar = ({footerPosition}) => {
             setXPos(startPosition.current.X+(differenceX*scaleFactor));
             setYPos(startPosition.current.Y+(differenceY*scaleFactor));
         }
-    }, 100);
+    }, 200); // throttle to 200ms for performance
 
     useEffect(() => { // refresh on footer position update
         // get star position: 

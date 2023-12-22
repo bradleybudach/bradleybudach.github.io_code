@@ -1,6 +1,6 @@
 .header-container {
     display: flex;
-    height: auto;
+    height: 100vh;
     width: 100vw;
     position: relative;
     align-items: center;
@@ -8,7 +8,15 @@
   }
 
 .header-canvas {
-    background-image: linear-gradient(rgb(0, 5, 40), rgb(0, 20, 64));
+    background-image: linear-gradient(rgb(0, 5, 40), rgb(3,37,126));
+    position: absolute;
+}
+
+.stars-container {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
 }
 
 .shooting-star {

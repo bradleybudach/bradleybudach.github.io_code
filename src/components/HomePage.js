@@ -46,7 +46,7 @@ const HomePage = () => {
     }
 
     return (<>
-        <Header navigationFunction={navigate} footerReference={(contactSectionRef) ? footerRef : null}/>
+        <Header navigationFunction={navigate} footerReference={footerRef}/>
         <div className='sections'>
             <AboutMeSection ref={aboutMeSectionRef}/>
             <ProjectsSection ref={projectsSectionRef}/>
