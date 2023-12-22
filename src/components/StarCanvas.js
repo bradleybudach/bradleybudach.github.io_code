@@ -7,7 +7,7 @@ const StarsHeader = ({footerReference}) => {
     const [stars, setStars] = useState([]); // shooting stars to appar over the webpage
 
     const refreshCanvas = () => {
-        if (!footerReference) { // await footer reference
+        if (!footerReference || !document.fonts.ready) { // await footer reference
             return;
         } 
         
