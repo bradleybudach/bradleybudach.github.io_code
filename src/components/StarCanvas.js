@@ -24,7 +24,7 @@ const StarsHeader = ({footerReference}) => {
         canvas.height = displayHeight;
         context.fillStyle = '#FFFFFF';
 
-        for (let i = 0; i < displayHeight/20; i++) { // draw stars, scales with width (width/20):
+        for (let i = 0; i < displayHeight/15; i++) { // draw stars, scales with width (width/20):
             context.beginPath();
 		    context.arc(Math.floor(Math.random()*displayWidth) + 1, Math.floor(Math.random()*displayHeight) + 1, 2, 0, Math.PI * 2);
             context.fill();
