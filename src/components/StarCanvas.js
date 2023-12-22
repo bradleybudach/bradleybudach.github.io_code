@@ -1,11 +1,18 @@
 import React, { useRef, useEffect, useState } from 'react';
 import '../styles/StarCanvas.css';
+import { throttle } from 'lodash';
 
-const StarsHeader = (props) => {
+const StarsHeader = ({footerReference}) => {
     const canvasRef = useRef(null); // ref to canvas
     const [stars, setStars] = useState([]); // shooting stars to appar over the webpage
 
     const refreshCanvas = () => {
+        if (!footerReference) { // await footer reference
+            return;
+        } 
+        
+        const footerPosition = footerReference.current.getBoundingClientRect().top + document.documentElement.scrollTop; // get footer position
+
         // set canvas values:
         const canvas = canvasRef.current
         const context = canvas.getContext('2d');
@@ -23,7 +30,7 @@ const StarsHeader = (props) => {
             context.fill();
         }
 
-        getStars(); // resets shooting stars
+        getStars(footerPosition);
     }
 
     useEffect(() => {
@@ -38,37 +45,20 @@ const StarsHeader = (props) => {
           }
     }, []);
 
-    const getStars = () => {
-        /*const body = document.body;
-        const html = document.documentElement;
-
-        const fullPageHeight = Math.max(
-            body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight
-          );*/
-
-        let stars = [];
-        for (let i = 0; i < visualViewport.width/50; i++) { // generates width/50 shooting stars:
-            const startPos = {  // random start loc:
-                X: Math.floor(Math.random()*visualViewport.width-5), 
-                Y: Math.floor(Math.random()*visualViewport.height-5)
-            };
-
-            const endPos = { // random end loc within 200px of start:
-                X: startPos.X + Math.floor(Math.random()*200)-100,
-                Y: startPos.Y + Math.floor(Math.random()*200)-100,
-            }
-
-            stars[i] = <ShootingStar key={i} startPosition={startPos} endPosition={endPos}/>;
+    const getStars = (footerPosition) => {
+        // generate/update stars based on footer position
+        let newStars = [];
+        for (let i = 0; i < footerPosition/50; i++) { // generates height/50 shooting stars:
+            newStars[i] = <ShootingStar key={i} footerPosition={footerPosition}/>;
         }
 
-        setStars(stars);
+        setStars(newStars);
     }
 
     return ( 
         <div className='header-container'>
             <h1 className='header-text'>SOFTWARE DEVELOPER</h1>
-            <canvas className='header-canvas' ref={canvasRef} {...props}/>
+            <canvas className='header-canvas' ref={canvasRef}/>
             {stars}
         </div> 
     );
@@ -77,50 +67,64 @@ const StarsHeader = (props) => {
 }
 
 // Defines shooting star for canvas
-const ShootingStar = ({startPosition, endPosition}) => {
+const ShootingStar = ({footerPosition}) => {
     // Position states
+    const startPosition = useRef({});
+    const endPosition = useRef({});
+    
     const [xPos, setXPos] = useState(startPosition.X);
     const [yPos, setYPos] = useState(startPosition.Y);
 
-    const handleScroll = () => {
-        // get distance between start and end
-        const differenceX = startPosition.X-endPosition.X;
-        const differenceY = startPosition.Y-endPosition.Y;
+    const handleScroll = throttle(() => {
+        if (!startPosition.current.X || !endPosition.current.X) {
+            return;
+        }
 
-        const scaleFactor =  Math.max(0, Math.min(100, window.scrollY/3))/100; // factor based on scroll to determine animation position
+        const scrollPos = window.scrollY+window.innerHeight; // current position on page
+        const viewportHeight = visualViewport.height;
 
-        if (scaleFactor <= 1) { // animate star if it is approaching end pos
-            setXPos(startPosition.X+(differenceX*scaleFactor));
-            setYPos(startPosition.Y+(differenceY*scaleFactor));
-        }   
-    }
+        const startPos = startPosition.current.Y-viewportHeight; // start positon corrected by start offset
+        const endPos = startPosition.current.Y+viewportHeight; // end pos corrected with scroll length
 
-    const refreshStars = () => {
-        // refresh all star values on window resize:
-        const displayWidth = visualViewport.width;
-        const displayHeight = visualViewport.height;
+        if (scrollPos >= startPos && scrollPos <= endPos) {
+            // get distance between start and end
+            const differenceX = startPosition.current.X-endPosition.current.X;
+            const differenceY = startPosition.current.Y-endPosition.current.Y;
 
-        startPosition.X = Math.floor(Math.random()*displayWidth-5);
-        startPosition.Y = Math.floor(Math.random()*displayHeight-5);
+            const scaleFactor = (viewportHeight-(endPos-scrollPos))/viewportHeight; // factor based on scroll to determine animation position
 
-        endPosition.X = startPosition.X + Math.floor(Math.random()*200)-100;
-        endPosition.Y = startPosition.Y + Math.floor(Math.random()*200)-100;
+            setXPos(startPosition.current.X+(differenceX*scaleFactor));
+            setYPos(startPosition.current.Y+(differenceY*scaleFactor));
+        }
+    }, 100);
 
-        setXPos(startPosition.X);
-        setYPos(startPosition.Y);
-    }
+    useEffect(() => { // refresh on footer position update
+        // get star position: 
+        const startPos = {  // random start loc:
+            X: Math.floor(Math.random()*visualViewport.width-5), 
+            Y: Math.floor(Math.random()*footerPosition-100)
+        };
 
-    useEffect(() => {
+        const endPos = { // random end loc within 200px of start:
+            X: startPos.X + Math.floor(Math.random()*200)-100,
+            Y: startPos.Y + Math.floor(Math.random()*200)-100,
+        }
+
+        startPosition.current = startPos;
+        endPosition.current = endPos;
+
+        // set starting position:
+        setXPos(startPos.X);
+        setYPos(startPos.Y);
+
         // Event Listeners:
         window.addEventListener('scroll', handleScroll, { passive: true }); // scroll animations
-        window.addEventListener('resize', refreshStars); // update stars on resize
 
          // remove listeners on unmount
          return () => {
-             window.removeEventListener('resize', refreshStars);
              window.removeEventListener('scroll', handleScroll);
            }
-    }, []);
+    }, [footerPosition]);
 
     // returns star with small variation in animation transition timing:
     return (

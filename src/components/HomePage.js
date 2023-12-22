@@ -4,7 +4,7 @@ import StarsHeader from './StarCanvas';
 import AboutMeSection from './AboutMe';
 import ProjectsSection from './Projects';
 import ContactSection from './ContactMe';
-import { useRef } from 'react';
+import { forwardRef, useRef } from 'react';
 
 // nav dictionary:
 const Navigation = {
@@ -21,6 +21,7 @@ const HomePage = () => {
     const aboutMeSectionRef = useRef(null);
     const projectsSectionRef = useRef(null);
     const contactSectionRef = useRef(null);
+    const footerRef = useRef(null);
 
     const navigate = (target) => { // scroll to target components
         let y = 0;
@@ -45,18 +46,18 @@ const HomePage = () => {
     }
 
     return (<>
-        <Header navigationFunction={navigate}/>
+        <Header navigationFunction={navigate} footerReference={(contactSectionRef) ? footerRef : null}/>
         <div className='sections'>
             <AboutMeSection ref={aboutMeSectionRef}/>
             <ProjectsSection ref={projectsSectionRef}/>
             <ContactSection ref={contactSectionRef}/>
-            <Footer/>
+            <Footer ref={footerRef}/>
         </div>
     </>);
 };
   
 // Defines header/nav-bar:
-const Header = ({navigationFunction}) => {
+const Header = ({navigationFunction, footerReference}) => {
     return (
         <div className='header'>
             <div className='header-title'>
@@ -67,18 +68,18 @@ const Header = ({navigationFunction}) => {
                     <p onClick={() => {navigationFunction(Navigation.Contact)}}>Contact Me</p>
                 </div>
             </div>
-            <StarsHeader/>
+            <StarsHeader footerReference={footerReference}/>
         </div>
     );
 };
 
 // defines page footer
-const Footer = () => {
+const Footer = forwardRef((props, ref) => {
     return (
-        <div className='footer'>
+        <div className='footer' ref={ref}>
             <p>&copy; Bradley Budach 2023</p>
         </div>
     );
-}
+});
 
 export default HomePage;
