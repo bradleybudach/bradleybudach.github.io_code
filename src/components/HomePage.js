@@ -4,7 +4,8 @@ import StarsHeader from './StarCanvas';
 import AboutMeSection from './AboutMe';
 import ProjectsSection from './Projects';
 import ContactSection from './ContactMe';
-import { forwardRef, useRef } from 'react';
+import useHeight from './useHeight';
+import { forwardRef, useRef, useState } from 'react';
 
 // nav dictionary:
 const Navigation = {
@@ -22,6 +23,10 @@ const HomePage = () => {
     const projectsSectionRef = useRef(null);
     const contactSectionRef = useRef(null);
     const footerRef = useRef(null);
+
+    const mainContainer = useRef(null);
+    const [loaded, setLoaded] = useState(false);
+    const pageHeight = useHeight(mainContainer, loaded)
 
     const navigate = (target) => { // scroll to target components
         let y = 0;
@@ -45,19 +50,21 @@ const HomePage = () => {
         });
     }
 
-    return (<>
-        <Header navigationFunction={navigate} footerReference={footerRef}/>
-        <div className='sections'>
-            <AboutMeSection ref={aboutMeSectionRef}/>
-            <ProjectsSection ref={projectsSectionRef}/>
-            <ContactSection ref={contactSectionRef}/>
-            <Footer ref={footerRef}/>
+    return (
+        <div className='main' ref={mainContainer} onLoad={() => {setLoaded(true)}}>
+            <Header navigationFunction={navigate} pageHeight={pageHeight}/>
+            <div className='sections'>
+                <AboutMeSection ref={aboutMeSectionRef}/>
+                <ProjectsSection ref={projectsSectionRef}/>
+                <ContactSection ref={contactSectionRef}/>
+                <Footer ref={footerRef}/>
+            </div>
         </div>
-    </>);
+    );
 };
   
 // Defines header/nav-bar:
-const Header = ({navigationFunction, footerReference}) => {
+const Header = ({navigationFunction, pageHeight}) => {
     return (
         <div className='header'>
             <div className='header-title'>
@@ -68,7 +75,7 @@ const Header = ({navigationFunction, footerReference}) => {
                     <p onClick={() => {navigationFunction(Navigation.Contact)}}>Contact Me</p>
                 </div>
             </div>
-            <StarsHeader footerReference={footerReference}/>
+            <StarsHeader pageHeight={pageHeight}/>
         </div>
     );
 };

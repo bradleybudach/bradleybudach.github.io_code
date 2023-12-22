@@ -2,24 +2,22 @@ import React, { useRef, useEffect, useState } from 'react';
 import '../styles/StarCanvas.css';
 import { throttle } from 'lodash';
 
-const StarsHeader = ({footerReference}) => {
+const StarsHeader = ({pageHeight}) => {
     const canvasRef = useRef(null); // ref to canvas
     const [stars, setStars] = useState([]); // shooting stars to appar over the webpage
 
     const refreshCanvas = () => {
-        if (!footerReference || !document.fonts.ready) { // await footer reference
+        if (!pageHeight) { // await page height reference
             return;
         } 
-        
-        const footerPosition = footerReference.current.getBoundingClientRect().top + document.documentElement.scrollTop; // get footer position
 
         // set canvas values:
         const canvas = canvasRef.current
         const context = canvas.getContext('2d');
         const displayWidth = visualViewport.width;
-        const displayHeight = footerPosition+100;
+        const displayHeight = pageHeight+100;
         canvas.style.width = '100%';
-        canvas.style.height =  footerPosition+100 + 'px';
+        canvas.style.height =  pageHeight+100 + 'px';
         canvas.width = displayWidth;
         canvas.height = displayHeight;
         context.fillStyle = '#FFFFFF';
@@ -30,7 +28,7 @@ const StarsHeader = ({footerReference}) => {
             context.fill();
         }
 
-        getStars(footerPosition);
+        getStars(pageHeight);
     }
 
     useEffect(() => {
@@ -43,13 +41,13 @@ const StarsHeader = ({footerReference}) => {
         return () => {
             window.removeEventListener('resize', refreshCanvas);
           }
-    }, [footerReference]);
+    }, [pageHeight]);
 
-    const getStars = (footerPosition) => {
-        // generate/update stars based on footer position
+    const getStars = (pageHeight) => {
+        // generate/update stars based on page height
         let newStars = [];
-        for (let i = 0; i < footerPosition/50; i++) { // generates height/50 shooting stars:
-            newStars[i] = <ShootingStar key={i} footerPosition={footerPosition}/>;
+        for (let i = 0; i < pageHeight/50; i++) { // generates height/50 shooting stars:
+            newStars[i] = <ShootingStar key={i} pageHeight={pageHeight}/>;
         }
 
         setStars(newStars);
@@ -70,7 +68,7 @@ const StarsHeader = ({footerReference}) => {
 }
 
 // Defines shooting star for canvas
-const ShootingStar = ({footerPosition}) => {
+const ShootingStar = ({pageHeight}) => {
     // Position states
     const startPosition = useRef({});
     const endPosition = useRef({});
@@ -101,11 +99,11 @@ const ShootingStar = ({footerPosition}) => {
         }
     }, 200); // throttle to 200ms for performance
 
-    useEffect(() => { // refresh on footer position update
+    useEffect(() => { // refresh on page height update
         // get star position: 
         const startPos = {  // random start loc:
             X: Math.floor(Math.random()*visualViewport.width-5), 
-            Y: Math.floor(Math.random()*footerPosition-100)
+            Y: Math.floor(Math.random()*pageHeight-100)
         };
 
         const endPos = { // random end loc within 200px of start:
@@ -127,7 +125,7 @@ const ShootingStar = ({footerPosition}) => {
          return () => {
              window.removeEventListener('scroll', handleScroll);
            }
-    }, [footerPosition]);
+    }, [pageHeight]);
 
     // returns star with small variation in animation transition timing:
     return (
