@@ -50,8 +50,12 @@ const HomePage = () => {
         });
     }
 
+    const handleLoad = () => {
+        setLoaded(true);
+    }
+
     return (
-        <div className='main' ref={mainContainer} onLoad={() => {setLoaded(true)}}>
+        <div className='main' ref={mainContainer} onLoad={handleLoad}>
             <Header navigationFunction={navigate} pageHeight={pageHeight}/>
             <div className='sections'>
                 <AboutMeSection ref={aboutMeSectionRef}/>

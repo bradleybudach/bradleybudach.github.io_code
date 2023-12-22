@@ -4,11 +4,11 @@ const useHeight = (elementRef, isLoaded) => {
     const [height, setHeight] = useState(null);
 
     const updateHeight = useCallback(() => {
-        if (isLoaded && elementRef && elementRef.current) {
+        if (isLoaded && elementRef && elementRef.current && document.readyState === "complete") {
             const { height } = elementRef.current.getBoundingClientRect();
             setHeight(height);
         }
-    }, [isLoaded, elementRef]);
+    }, [isLoaded, elementRef, document.readyState]);
 
     useEffect(() => {
         updateHeight();
