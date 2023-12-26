@@ -1,20 +1,26 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const useHeight = (elementRef, isLoaded) => {
+const useHeight = (elementRef) => {
     const [height, setHeight] = useState(null);
 
-    const updateHeight = useCallback(() => {
-        if (isLoaded && elementRef && elementRef.current && document.readyState === "complete") {
+    const updateHeight = useCallback(() => { // get height of target element
+        if (elementRef && elementRef.current) {
             const { height } = elementRef.current.getBoundingClientRect();
             setHeight(height);
         }
-    }, [isLoaded, elementRef, document.readyState]);
+    }, [elementRef]);
 
     useEffect(() => {
         updateHeight();
-        window.addEventListener("resize", updateHeight);
+
+        // Event listeners:
+        window.addEventListener("resize", updateHeight); // adjust height on resize
+        window.addEventListener("load", updateHeight); // ensure page fully loads content before checking height
+
+        // Remove Event Listeners:
         return () => {
           window.removeEventListener("resize", updateHeight);
+          window.removeEventListener("load", updateHeight); 
         };
       }, [updateHeight]);
 

@@ -5,7 +5,7 @@ import AboutMeSection from './AboutMe';
 import ProjectsSection from './Projects';
 import ContactSection from './ContactMe';
 import useHeight from './useHeight';
-import { forwardRef, useRef, useState } from 'react';
+import { forwardRef, useRef } from 'react';
 
 // nav dictionary:
 const Navigation = {
@@ -25,8 +25,7 @@ const HomePage = () => {
     const footerRef = useRef(null);
 
     const mainContainer = useRef(null);
-    const [loaded, setLoaded] = useState(false);
-    const pageHeight = useHeight(mainContainer, loaded)
+    const pageHeight = useHeight(mainContainer);
 
     const navigate = (target) => { // scroll to target components
         let y = 0;
@@ -49,13 +48,8 @@ const HomePage = () => {
             behavior: 'smooth'
         });
     }
-
-    const handleLoad = () => {
-        setLoaded(true);
-    }
-
     return (
-        <div className='main' ref={mainContainer} onLoad={handleLoad}>
+        <div className='main' ref={mainContainer}>
             <Header navigationFunction={navigate} pageHeight={pageHeight}/>
             <div className='sections'>
                 <AboutMeSection ref={aboutMeSectionRef}/>

@@ -15,7 +15,9 @@ const LanguageDictionary = {
     reactNative: {color: '#CC7000', text: 'React Native'},
     cSharp: {color: '#CC8899', text: 'C#'},
     cPlusPlus: {color: '#00578A', text: 'C++'},
-}
+    WPF: {color: '#301934', text: 'WPF'},
+    python: {color: '#FFFF00', text: 'Python'},
+};
 
 // forwards ref of title back to navigation to allow for scrolling to this section
 const ProjectsSection = forwardRef((props, ref) => {
@@ -42,10 +44,10 @@ const ProjectsSection = forwardRef((props, ref) => {
 
             <div className='projects-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}}>
                 <Project 
-                    title={'Project Title'} 
-                    description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
-                    imgSrc={'/images/project1.png'}
-                    languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.java, LanguageDictionary.javascript, LanguageDictionary.react, LanguageDictionary.reactNative, LanguageDictionary.cPlusPlus, LanguageDictionary.cSharp]}
+                    title={'Digital Level'} 
+                    description={'Integrating both hardware and software using a Circuit Playground, this level uses an accelerometer and LEDs to efficiently measure and indicate the flatness of a surface.'} 
+                    imgSrc={'/images/level_project.png'}
+                    languageList={[LanguageDictionary.cPlusPlus, LanguageDictionary.python]}
                     route={'/Project1'}/>
                 <Project 
                     title={'Project Title'} 
