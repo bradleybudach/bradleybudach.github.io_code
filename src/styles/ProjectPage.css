@@ -145,4 +145,12 @@
     .project-buttons {
         flex-direction: column-reverse;
     }
+
+    .project-body {
+        width: 95%;
+    }
+
+    .project-content-container {
+        padding: 5px;
+    }
 }
