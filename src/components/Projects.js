@@ -18,6 +18,8 @@ export const LanguageDictionary = {
     cPlusPlus: {color: '#00578A', text: 'C++'},
     WPF: {color: '#301934', text: 'WPF'},
     python: {color: '#FFFF00', text: 'Python'},
+    kotlin: {color: '#FCD299', text: 'Kotlin'},
+    xaml: {color: '#800060', text: 'XAML'},
 };
 
 // forwards ref of title back to navigation to allow for scrolling to this section
@@ -51,23 +53,23 @@ const ProjectsSection = forwardRef((props, ref) => {
                     languageList={[LanguageDictionary.cPlusPlus, LanguageDictionary.python]}
                     route={'/LevelProject'}/>
                 <Project 
-                    title={'Project Title'} 
-                    description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
+                    title={'Voice Photos App'} 
+                    description={'A mobile app commissioned by Geo Spatial Services used for field image capture and voice recordings. This app allows GSS Technicians to easily capture data offline and in the field.'} 
                     imgSrc={'/images/project1.png'}
-                    languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
-                    route={'/Project1'}/>
+                    languageList={[LanguageDictionary.reactNative, LanguageDictionary.javascript, LanguageDictionary.kotlin]}
+                    route={'/VoicePhotosProject'}/>
                 <Project 
-                    title={'Project Title'} 
-                    description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
+                    title={'Java Calculator'} 
+                    description={''} 
                     imgSrc={'/images/project1.png'}
-                    languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
-                    route={'/Project1'}/>
+                    languageList={[LanguageDictionary.java]}
+                    route={'/JavaCalculatorProject'}/>
                 <Project 
-                    title={'Project Title'} 
-                    description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
+                    title={'Wetland Code Interpreter'} 
+                    description={''} 
                     imgSrc={'/images/project1.png'}
-                    languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
-                    route={'/Project2'}/>
+                    languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml]}
+                    route={'/WetlandCodeInterpreterProject'}/>
             </div>
         </div>
     );

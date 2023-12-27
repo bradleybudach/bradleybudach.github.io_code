@@ -3,11 +3,12 @@ import '../../styles/Theme.css';
 import '../../styles/ProjectPage.css';
 import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton'
+import { size } from 'lodash';
 
-const languageList = [LanguageDictionary.cPlusPlus, LanguageDictionary.python];
-const githubLink = 'https://github.com/bradleybudach/CircuitPlaygroundDigitalLevel';
+const languageList = [LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml];
+const githubLink = '';
 
-const LevelProject = (props) => {
+const WetlandCodeInterpreter_Project = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []); // scroll to top on load
@@ -16,7 +17,7 @@ const LevelProject = (props) => {
     return (
     <div class='project-container'>
         <div class='project-header'>
-            <h1>Digital Level</h1>
+            <h1 style={{minWidth: 450, fontSize: '2.5em'}}>Wetland Code Interpreter</h1>
             <div className='language-cont'>
                 {
                     languageList.map(language => {
@@ -41,11 +42,7 @@ const LevelProject = (props) => {
                 <div className='project-text-container'>
                     <h3>OVERVIEW</h3>
                     <p>
-                        I built this Level Project for a class where I learned how to program microcontrollers.
-                        I built the level to be used on a Circuit Playground Microcontroller.
-                        The Level makes use of the accelerometer built into the Circuit Playground to determine the angle it is facing, as well as the LED lights to indicate this angle to the user.
-                        I did my best to harness the fact that it was a digital level, and create functionality that would not be possible with a traditional analog level.
-                        The level could be set to measure for a specific angle, or save the angle of a surface to compare to another, or just left at the default to measure if a surface is flat.
+                        Lorem Ipsem sit ador amet
                     </p>
                 </div>
                 
@@ -55,13 +52,7 @@ const LevelProject = (props) => {
             <div className='project-content-container'>
                 <h3>CHALLENGES</h3>
                 <ul>
-                    <li>Deaing with the memory constraints of microcontroller</li>
-                    <li>Changing language from Python to C++</li>
-                    <li>Learning the math behind the angle calculation</li>
-                    <li>Maping spatial position data to the correct indicator lights</li>
-                    <li>Creating intuitive user controls with only two buttons</li>
-                    <li>Minimizing error in imperfect hardware</li>
-                    <li>Smoothing calculation to prevent flickering lights</li>
+                    
                 </ul>
             </div>
 
@@ -70,14 +61,7 @@ const LevelProject = (props) => {
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
                     <p>
-                        This project taught me a lot aobut how to program microcontrollers. 
-                        I learned pretty quickly that memory and efficiency was a much bigger issue on this hardware than it was on most computers.
-                        When I was most of the way done with the project in Python I had to switch to C++ becuase I was running into memory issues.
-                        Switching to C++ allowed me to signifigantly increase the efficiency of the program and eliminate the memory issues I was having.
-                        The project also required a good bit of research to learn how to go from raw accelerometer data to an angle in 3d space. 
-                        But after seeing how others solved this issue, the implimentation for my project was just pretty simple trigonometry.
-                        I learned a lot creating the level, but I think the biggest takeaway is all of the challenges that come with implementing programs on microcontrollers.
-                        The hardware constraints force you to get creative when solving problems, and focus on efficiency. But those constraints only helped me learn more.
+                    Lorem Ipsem sit ador amet
                     </p>
                 </div>
             </div>
@@ -99,4 +83,4 @@ const LevelProject = (props) => {
 
 
 
-export default LevelProject;
+export default WetlandCodeInterpreter_Project;
