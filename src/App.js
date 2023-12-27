@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from './components/HomePage'
 import Project1 from './components/project_pages/Project1';
+import LevelProject from "./components/project_pages/Level_Project";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,11 @@ const router = createBrowserRouter([
   {
     path: '/Project1',
     element: <Project1/>,
-  }
+  },
+  {
+    path: 'LevelProject',
+    element: <LevelProject/>,
+  },
 ]);
 
 function App() {

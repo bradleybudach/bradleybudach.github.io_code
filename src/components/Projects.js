@@ -4,9 +4,10 @@ import '../styles/Projects.css';
 import '../styles/Theme.css';
 import { throttle } from 'lodash';
 import { useNavigate } from 'react-router-dom';
+import HoverButton from './HoverButton';
 
 // Dictionary for possible languages to display on projects
-const LanguageDictionary = {
+export const LanguageDictionary = {
     hmtl: {color: '#D2B48C', text: 'HTML'},
     css: {color: '#ADD8E6', text: 'CSS'},
     javascript: {color: '#FFA500', text: 'JS'},
@@ -48,7 +49,7 @@ const ProjectsSection = forwardRef((props, ref) => {
                     description={'Integrating both hardware and software using a Circuit Playground, this level uses an accelerometer and LEDs to efficiently measure and indicate the flatness of a surface.'} 
                     imgSrc={'/images/level_project.png'}
                     languageList={[LanguageDictionary.cPlusPlus, LanguageDictionary.python]}
-                    route={'/Project1'}/>
+                    route={'/LevelProject'}/>
                 <Project 
                     title={'Project Title'} 
                     description={'This is a description for the project. Testing for word warp and other such stuff that is pretty important.'} 
@@ -135,12 +136,7 @@ const Project = ({title, description, imgSrc, languageList, route}) => {
                         }
                     </div>
                     
-                    <div className='button-container'>
-                        <button className='details-button' style={{paddingRight: (isHovering) ? 30 : 0}}>{'View Details'}</button>
-                        <div id='b1' style={{transform: (isHovering) ? 'translate(-15px, 0px)' : 'translate(0px, 0px)'}}/>
-                        <div id='b2' style={{transform: (isHovering) ? 'translate(15px, 0px)' : 'translate(0px, 0px)'}}/>
-                        <div id='arrow' style={{transform: (isHovering) ? 'translate(50px, 0px)' : 'translate(100px, 0px)'}}>{'\u2BC8'}</div>
-                    </div>
+                    <HoverButton text={'View Details'} width={170} style={{marginLeft: 'auto'}} buttonOverride={isHovering}/>
                 </div>
         </div>
     );

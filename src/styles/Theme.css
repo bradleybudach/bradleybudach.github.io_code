@@ -9,10 +9,6 @@ body, html {
     overflow: hidden;
 }
 
-/*.sections {
-    background-image: linear-gradient(rgb(0, 20, 64), rgb(3,37,126));
-}*/
-
 .section-container {
     width: 100%;
     display: flex;

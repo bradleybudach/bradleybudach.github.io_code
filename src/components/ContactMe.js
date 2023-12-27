@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, forwardRef } from 'react';
 import AnimatedStar from './AnimatedStar';
 import '../styles/Contact.css';
 import '../styles/Theme.css';
+import HoverButton from './HoverButton';
 
 // forwards ref of title back to navigation to allow for scrolling to this section
 const ContactSection = forwardRef((props, ref) => {
@@ -42,27 +43,12 @@ const ContactSection = forwardRef((props, ref) => {
                     <input title='name' name='name' type="text" value={name} onChange={(e) => setName(e.target.value)}/><br/>
                     <label>MESSAGE:</label><br/>
                     <textarea title='message' name='message' value={message} onChange={(e) => setMessage(e.target.value)}/><br/>
-                    <HoverButton/>
+                    <HoverButton text={'Email Me'} width={170}/>
                     <br/>
                 </form>
             </div>
         </div>
     );
 });
-
-
-// Hover button for message submission:
-const HoverButton = () => {
-    const [isHovering, setIsHovering] = useState(false); // is this component being hovered
-
-    return (
-        <div className='button-container' style={{margin: 0}} onMouseEnter={() => {setIsHovering(true)}} onMouseLeave={() => {setIsHovering(false)}}>
-            <button type='submit' className='details-button' style={{paddingRight: (isHovering) ? 30 : 0}}>{'Email Me'}</button>
-            <div id='b1' style={{transform: (isHovering) ? 'translate(-15px, 0px)' : 'translate(0px, 0px)'}}/>
-            <div id='b2' style={{transform: (isHovering) ? 'translate(15px, 0px)' : 'translate(0px, 0px)'}}/>
-            <div id='arrow' style={{transform: (isHovering) ? 'translate(50px, 0px)' : 'translate(100px, 0px)'}}>{'\u2BC8'}</div>
-        </div>
-    );
-}
 
 export default ContactSection;
