@@ -14,6 +14,7 @@ const LevelProject = (props) => {
       }, []); // scroll to top on load
 
     return (
+    <>
     <div className='project-container'>
         <div className='project-header'>
             <h1>Digital Level</h1>
@@ -88,12 +89,11 @@ const LevelProject = (props) => {
 
             <HoverButton text={'Source Code'} link={githubLink} target={'_blank'} width={170} style={{margin: 20}}/>
         </div>
-        
-
-        <div className='footer'>
-            <p style={{margin: 5, padding: 0}}>&copy; Bradley Budach 2023</p>
-        </div>
     </div>
+    <div className='footer'>
+        <p>&copy; Bradley Budach 2023</p>
+    </div>
+    </>
     );
 }
 

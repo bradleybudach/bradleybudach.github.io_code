@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import '../../styles/Theme.css';
 import '../../styles/ProjectPage.css';
 import { LanguageDictionary } from '../Projects';
-import HoverButton from '../HoverButton'
+import HoverButton from '../HoverButton';
+import { images } from '../Images';
 
 const languageList = [LanguageDictionary.java];
 const githubLink = 'https://github.com/bradleybudach/JavaCalculator';
@@ -14,9 +15,10 @@ const JavaCalculator_Project = (props) => {
 
 
     return (
+    <>
     <div className='project-container'>
         <div className='project-header'>
-            <h1>Java Calculator</h1>
+            <h1 style={{minWidth: 350}}>Java Calculator</h1>
             <div className='language-cont'>
                 {
                     languageList.map(language => {
@@ -45,7 +47,7 @@ const JavaCalculator_Project = (props) => {
                     </p>
                 </div>
                 
-                <div style={{flex: 1, alignSelf: 'center'}}><img src={'/images/level_project.png'}/></div>
+                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project.png']} alt='Level Project'/></div>
             </div>
             
             <div className='project-content-container'>
@@ -56,7 +58,7 @@ const JavaCalculator_Project = (props) => {
             </div>
 
             <div className='side-by-side'>
-                <div style={{flex: 1, alignSelf: 'center'}}><img src={'/images/level_project_code.png'}/></div>
+                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project_code.png']} alt='Level Project Code'/></div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
                     <p>
@@ -72,11 +74,12 @@ const JavaCalculator_Project = (props) => {
             <HoverButton text={'Source Code'} link={githubLink} target={'_blank'} width={170} style={{margin: 20}}/>
         </div>
         
-
-        <div className='footer'>
-            <p style={{margin: 5, padding: 0}}>&copy; Bradley Budach 2023</p>
-        </div>
     </div>
+
+    <div className='footer'>
+        <p style={{margin: 5, padding: 0}}>&copy; Bradley Budach 2023</p>
+    </div>
+    </>
     );
 }
 
