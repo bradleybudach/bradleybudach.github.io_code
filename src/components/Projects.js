@@ -5,6 +5,7 @@ import '../styles/Theme.css';
 import { throttle } from 'lodash';
 import { useNavigate } from 'react-router-dom';
 import HoverButton from './HoverButton';
+import { images } from './Images';
 
 // Dictionary for possible languages to display on projects
 export const LanguageDictionary = {
@@ -49,25 +50,25 @@ const ProjectsSection = forwardRef((props, ref) => {
                 <Project 
                     title={'Digital Level'} 
                     description={'Integrating both hardware and software using a Circuit Playground, this level uses an accelerometer and LEDs to efficiently measure and indicate the flatness of a surface.'} 
-                    imgSrc={'/images/level_project.png'}
+                    imgSrc={images['level_project.png']}
                     languageList={[LanguageDictionary.cPlusPlus, LanguageDictionary.python]}
                     route={'/LevelProject'}/>
                 <Project 
                     title={'Voice Photos App'} 
                     description={'A mobile app commissioned by Geo Spatial Services used for field image capture and voice recordings. This app allows GSS Technicians to easily capture data offline and in the field.'} 
-                    imgSrc={'/images/project1.png'}
+                    imgSrc={images['project1.png']}
                     languageList={[LanguageDictionary.reactNative, LanguageDictionary.javascript, LanguageDictionary.kotlin]}
                     route={'/VoicePhotosProject'}/>
                 <Project 
                     title={'Java Calculator'} 
                     description={''} 
-                    imgSrc={'/images/project1.png'}
+                    imgSrc={images['project1.png']}
                     languageList={[LanguageDictionary.java]}
                     route={'/JavaCalculatorProject'}/>
                 <Project 
                     title={'Wetland Code Interpreter'} 
                     description={''} 
-                    imgSrc={'/images/project1.png'}
+                    imgSrc={images['project1.png']}
                     languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml]}
                     route={'/WetlandCodeInterpreterProject'}/>
             </div>

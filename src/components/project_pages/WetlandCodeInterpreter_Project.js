@@ -15,8 +15,8 @@ const WetlandCodeInterpreter_Project = (props) => {
 
 
     return (
-    <div class='project-container'>
-        <div class='project-header'>
+    <div className='project-container'>
+        <div className='project-header'>
             <h1 style={{minWidth: 450, fontSize: '2.5em'}}>Wetland Code Interpreter</h1>
             <div className='language-cont'>
                 {

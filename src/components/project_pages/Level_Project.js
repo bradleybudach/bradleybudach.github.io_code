@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import '../../styles/Theme.css';
 import '../../styles/ProjectPage.css';
 import { LanguageDictionary } from '../Projects';
-import HoverButton from '../HoverButton'
+import HoverButton from '../HoverButton';
+import { images } from '../Images';
 
 const languageList = [LanguageDictionary.cPlusPlus, LanguageDictionary.python];
 const githubLink = 'https://github.com/bradleybudach/CircuitPlaygroundDigitalLevel';
@@ -12,10 +13,9 @@ const LevelProject = (props) => {
         window.scrollTo(0, 0);
       }, []); // scroll to top on load
 
-
     return (
-    <div class='project-container'>
-        <div class='project-header'>
+    <div className='project-container'>
+        <div className='project-header'>
             <h1>Digital Level</h1>
             <div className='language-cont'>
                 {
@@ -49,7 +49,7 @@ const LevelProject = (props) => {
                     </p>
                 </div>
                 
-                <div style={{flex: 1, alignSelf: 'center'}}><img src={'/images/level_project.png'}/></div>
+                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project.png']} alt='Image of the Level Circuit'/></div>
             </div>
             
             <div className='project-content-container'>
@@ -66,7 +66,7 @@ const LevelProject = (props) => {
             </div>
 
             <div className='side-by-side'>
-                <div style={{flex: 1, alignSelf: 'center'}}><img src={'/images/level_project_code.png'}/></div>
+                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project_code.png']} alt='Image of the code for the Level Project'/></div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
                     <p>

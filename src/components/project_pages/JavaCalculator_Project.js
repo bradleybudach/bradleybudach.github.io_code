@@ -14,8 +14,8 @@ const JavaCalculator_Project = (props) => {
 
 
     return (
-    <div class='project-container'>
-        <div class='project-header'>
+    <div className='project-container'>
+        <div className='project-header'>
             <h1>Java Calculator</h1>
             <div className='language-cont'>
                 {

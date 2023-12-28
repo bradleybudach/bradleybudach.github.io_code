@@ -14,8 +14,8 @@ const VoicePhotos_Project = (props) => {
 
 
     return (
-    <div class='project-container'>
-        <div class='project-header'>
+    <div className='project-container'>
+        <div className='project-header'>
             <h1 style={{minWidth: 400}}>Voice Photos App</h1>
             <div className='language-cont'>
                 {

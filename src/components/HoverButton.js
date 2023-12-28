@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import '../styles/HoverButton.css'
 
 const HoverButton = ({text, link, target, width, style, buttonOverride, colors}) => {
     // button override lets an outside source handle the hover and on-click (button functionality). Holds isHovering info
     const [isHovering, setIsHovering] = useState(false); // is this component being hovered
+    const buttonRef = useRef(null);
+
+    const handleClick = () => {
+        if (buttonOverride === undefined && link !== undefined) { // link between pages on button click and if functionality is not overwritten
+            window.open(link, target);
+        } else { // do a normal click event on the button if there is no link
+            if (buttonRef) {
+                buttonRef.current.click();
+            }
+        }
+    }
 
     return (
-        <div onClick={() => {
-            if (buttonOverride === undefined && link !== undefined) {
-                window.open(link, target)
-            }
-        }} 
+        <div onClick={handleClick} 
         className='button-container' 
         onMouseEnter={() => {
             if (buttonOverride === undefined) {
@@ -26,7 +33,7 @@ const HoverButton = ({text, link, target, width, style, buttonOverride, colors})
             <button className='details-button' style={{
                 paddingRight: (isHovering || buttonOverride) ? 30 : 0,
                 backgroundColor: (colors && colors.main) ? colors.main : 'rgba(254, 234, 0, 0.5)'
-                }}>{text}</button>
+                }} ref={buttonRef}>{text}</button>
             <div id='b1' style={{
                 transform: (isHovering || buttonOverride) ? 'translate(-15px, 0px)' : 'translate(0px, 0px)',
                 backgroundColor: (colors && colors.one) ? colors.one : 'red'
