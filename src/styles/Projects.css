@@ -79,6 +79,13 @@
     border-radius: 30px;
     color: white;
     background-color: rgba(0, 20, 64, 0.7);
+    transition: linear background-color 0.2s;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.language-display:hover {
+    background-color: rgba(0, 34, 106, 0.7);
 }
 
 .language-color {
