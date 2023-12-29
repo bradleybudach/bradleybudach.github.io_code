@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, forwardRef } from 'react';
+import React, { useRef, useState, forwardRef } from 'react';
 import '../styles/AboutMe.css';
 import '../styles/Theme.css';
 import AnimatedStar from './AnimatedStar';
@@ -29,7 +29,7 @@ const AboutMeSection = forwardRef((props, ref) => {
             
             <div className='content-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s', transitionDuration: (isComponentVisible) ? '0.5s' : '0s'}}>
                 <div className='img-container'>
-                    <img src={images['profile.png']} alt='Profile Image'/>
+                    <img src={images['profile.png']} alt='Profile'/>
                 </div>
                 <div style={{flex: 4}}><p>
                     My name is Bradley Budach. I have been an aspiring programmer since 4th grade.

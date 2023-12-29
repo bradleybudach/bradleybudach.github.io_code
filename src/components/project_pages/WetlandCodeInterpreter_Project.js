@@ -18,7 +18,7 @@ const JavaCalculator_Project = (props) => {
     <>
     <div className='project-container'>
         <div className='project-header'>
-            <h1 style={{minWidth: 600}}>Wetland Code Interpreter</h1>
+            <h1>Wetland Code Interpreter</h1>
             <div className='language-cont'>
                 {
                     languageList.map(language => {

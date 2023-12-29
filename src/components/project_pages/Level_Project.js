@@ -50,7 +50,7 @@ const LevelProject = (props) => {
                     </p>
                 </div>
                 
-                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project.png']} alt='Image of the Level Circuit'/></div>
+                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project.png']} alt='The Level Circuit'/></div>
             </div>
             
             <div className='project-content-container'>
@@ -67,7 +67,7 @@ const LevelProject = (props) => {
             </div>
 
             <div className='side-by-side'>
-                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project_code.png']} alt='Image of the code for the Level Project'/></div>
+                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project_code.png']} alt='The code for the Level Project'/></div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
                     <p>

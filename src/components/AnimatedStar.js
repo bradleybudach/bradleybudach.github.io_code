@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import '../styles/AnimatedStar.css';
 import { throttle } from "lodash";
 

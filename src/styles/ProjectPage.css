@@ -68,14 +68,14 @@
 
 .project-container h1 {
     flex: 1;
-    margin: 5px;
+    margin: 5px 15px 5px 15px;
     color: white;
     font-family: 'Barlow', sans-serif;
-    font-size: 3em;
+    font-size: min(6vw, 3em);
     font-weight: lighter;
     text-align: center;
     align-self: center;
-    min-width: 300px;
+    white-space: nowrap;
 }
 
 .project-container p {
