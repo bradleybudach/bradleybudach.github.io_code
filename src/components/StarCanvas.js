@@ -9,7 +9,7 @@ const StarsHeader = ({pageHeight}) => {
     const refreshCanvas = () => {
         if (!pageHeight) { // await page height reference
             return;
-        } 
+        }
 
         // set canvas values:
         const canvas = canvasRef.current
@@ -31,16 +31,8 @@ const StarsHeader = ({pageHeight}) => {
         getStars(pageHeight);
     }
 
-    useEffect(() => {
-        refreshCanvas(); // setup canvas
-
-        // update canvas on screen resize:
-        window.addEventListener('resize', refreshCanvas);
-        
-        // remove on unmount
-        return () => {
-            window.removeEventListener('resize', refreshCanvas);
-          }
+    useEffect(() => { // refresh canvas if page size changes
+        refreshCanvas(); 
     }, [pageHeight]);
 
     const getStars = (pageHeight) => {

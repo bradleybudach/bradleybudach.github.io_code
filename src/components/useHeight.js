@@ -1,14 +1,16 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const useHeight = (elementRef) => {
     const [height, setHeight] = useState(null);
+    const pageWidth = useRef(0);
 
     const updateHeight = useCallback(() => { // get height of target element
-        if (elementRef && elementRef.current) {
+        if (elementRef && elementRef.current && window.innerWidth !== pageWidth.current) {
+            pageWidth.current = window.innerWidth;
             const { height } = elementRef.current.getBoundingClientRect();
             setHeight(height);
         }
-    }, [elementRef]);
+    }, [elementRef, pageWidth]);
 
     useEffect(() => {
         updateHeight();
