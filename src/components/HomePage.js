@@ -5,7 +5,7 @@ import AboutMeSection from './AboutMe';
 import ProjectsSection from './Projects';
 import ContactSection from './ContactMe';
 import useHeight from './useHeight';
-import { forwardRef, useRef } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 
 // nav dictionary:
 const Navigation = {
@@ -48,6 +48,7 @@ const HomePage = () => {
             behavior: 'smooth'
         });
     }
+
     return (
         <div className='main' ref={mainContainer}>
             <Header navigationFunction={navigate} pageHeight={pageHeight}/>

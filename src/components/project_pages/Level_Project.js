@@ -85,7 +85,7 @@ const LevelProject = (props) => {
         </div>
 
         <div className='project-buttons'>
-            <HoverButton text={'Back To Projects'} link={'/'} target={'_self'} width={200} style={{margin: 20}} colors={{main: 'rgba(255, 83, 73, 0.5)'}}/>
+            <HoverButton text={'Back To Projects'} link={'/'} navigate={true} width={200} style={{margin: 20}} colors={{main: 'rgba(255, 83, 73, 0.5)'}}/>
 
             <HoverButton text={'Source Code'} link={githubLink} target={'_blank'} width={170} style={{margin: 20}}/>
         </div>

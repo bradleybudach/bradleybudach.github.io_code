@@ -1,14 +1,20 @@
 import React, { useRef, useState } from 'react';
 import '../styles/HoverButton.css'
+import { useNavigate } from 'react-router-dom';
 
-const HoverButton = ({text, link, target, width, style, buttonOverride, colors}) => {
+const HoverButton = ({text, link, navigate, target, width, style, buttonOverride, colors}) => {
     // button override lets an outside source handle the hover and on-click (button functionality). Holds isHovering info
     const [isHovering, setIsHovering] = useState(false); // is this component being hovered
     const buttonRef = useRef(null);
+    const navigateTo = useNavigate();
 
     const handleClick = () => {
         if (buttonOverride === undefined && link !== undefined) { // link between pages on button click and if functionality is not overwritten
-            window.open(link, target);
+            if (navigate) {
+                navigateTo(link);
+            } else {
+                window.open(link, target);
+            }
         } else { // do a normal click event on the button if there is no link
             if (buttonRef) {
                 buttonRef.current.click();
