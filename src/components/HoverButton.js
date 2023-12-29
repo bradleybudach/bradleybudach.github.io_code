@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import '../styles/HoverButton.css'
 import { useNavigate } from 'react-router-dom';
+import { size } from 'lodash';
 
 const HoverButton = ({text, link, navigate, target, width, style, buttonOverride, colors}) => {
     // button override lets an outside source handle the hover and on-click (button functionality). Holds isHovering info
@@ -50,8 +51,9 @@ const HoverButton = ({text, link, navigate, target, width, style, buttonOverride
                 }}/>
             <div id='arrow' style={{
                 transform: (isHovering || buttonOverride) ? `translate(${width/2-30}px, 0px)` : `translate(${width/2+30}px, 0px)`,
-                color: (colors && colors.arrow) ? colors.arrow : 'white'
-                }}>{'\u2BC8'}</div>
+                color: (colors && colors.arrow) ? colors.arrow : 'white',
+                fontSize: 25
+                }}>&#x25B8;</div>
         </div>
     );
 };
