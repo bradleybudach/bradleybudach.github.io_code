@@ -33,6 +33,12 @@
     padding: 20px;
 }
 
+.gif-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px; 
+}
+
 .project-content-container {
     display: flex;
     flex-direction: column;

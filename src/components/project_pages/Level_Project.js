@@ -26,7 +26,7 @@ const LevelProject = (props) => {
                                 <div className='language-color' style={{backgroundColor: language.color}}/>
                                 {language.text}
                             </div>
-                        )
+                        );
                     })
                 }
             </div>
@@ -51,6 +51,10 @@ const LevelProject = (props) => {
                 </div>
                 
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project.png']} alt='The Level Circuit'/></div>
+            </div>
+
+            <div className='gif-container'>
+                <img src={images['level_project.gif']} alt='Display of the level in action.' style={{width: '80%', maxWidth: '1000px'}}/>
             </div>
             
             <div className='project-content-container'>

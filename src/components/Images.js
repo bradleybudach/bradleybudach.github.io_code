@@ -4,4 +4,4 @@ function importAll(r) {
     return images;
 }
 
-export const images = importAll(require.context('../images', false, /\.png$/));
+export const images = importAll(require.context('../images', false, /\.(png|gif)$/));
