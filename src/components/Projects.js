@@ -50,26 +50,26 @@ const ProjectsSection = forwardRef((props, ref) => {
                 <Project 
                     title={'Digital Level'} 
                     description={'Integrating both hardware and software using a Circuit Playground, this level uses an accelerometer and LEDs to efficiently measure and indicate the flatness of a surface.'} 
-                    imgSrc={images['level_project.png']}
+                    img={<img src={images['level_project.png']} alt='Circuit Playground Level'/>}
                     languageList={[LanguageDictionary.cPlusPlus, LanguageDictionary.python]}
                     route={'/LevelProject'}/>
                 <Project 
                     title={'Voice Photos App'} 
                     description={'A mobile app commissioned by Geo Spatial Services used for field image capture and voice recordings. This app allows GSS Technicians to easily capture data offline and in the field.'} 
-                    imgSrc={images['project1.png']}
+                    img={<img src={images['project1.png']} alt='Project'/>}
                     languageList={[LanguageDictionary.reactNative, LanguageDictionary.javascript, LanguageDictionary.kotlin]}
                     route={'/VoicePhotosProject'}/>
                 <Project 
                     title={'Java Calculator'} 
                     description={''} 
-                    imgSrc={images['project1.png']}
+                    img={<img src={images['calculator_gui.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
                     languageList={[LanguageDictionary.java]}
                     route={'/JavaCalculatorProject'}/>
                 <Project 
                     title={'Wetland Code Interpreter'} 
                     description={''} 
-                    imgSrc={images['project1.png']}
-                    languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml]}
+                    img={<img src={images['project1.png']} alt='Project'/>}
+                    languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative]}
                     route={'/WetlandCodeInterpreterProject'}/>
             </div>
         </div>
@@ -77,7 +77,7 @@ const ProjectsSection = forwardRef((props, ref) => {
 });
 
 // Project Component
-const Project = ({title, description, imgSrc, languageList, route}) => {
+const Project = ({title, description, img, languageList, route}) => {
     const navigate = useNavigate(); // navigate to project page
     const [rotation, setRotation] = useState({}); // rotation for 3d effect
     const [isHovering, setIsHovering] = useState(false); // is this component being hovered
@@ -122,7 +122,9 @@ const Project = ({title, description, imgSrc, languageList, route}) => {
             onMouseLeave={handleMouseLeave} 
             style={{transform: `rotateX(${rotation.X}deg) rotateY(${rotation.Y}deg)`}}>
                 <h3 className='project-title'>{title}</h3>
-                <img src={imgSrc} alt='Project Image'/>
+                <div className='project-image-container'>
+                {img}
+                </div>
                 <p className='description-text'>{description}</p>
 
                 <div className='project-bottom-section'>

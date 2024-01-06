@@ -29,8 +29,15 @@
     background-color: rgba(118, 146, 255, 0.8);
 }
 
-.project img {
+.project-image-container {
+    height: 200px;
     max-width: 100%;
+    background-color: black;
+    border-radius: 30px;
+}
+
+.project img {
+    width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
