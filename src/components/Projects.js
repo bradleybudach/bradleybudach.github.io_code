@@ -61,7 +61,7 @@ const ProjectsSection = forwardRef((props, ref) => {
                     route={'/VoicePhotosProject'}/>
                 <Project 
                     title={'Java Calculator'} 
-                    description={''} 
+                    description={'A calculator built using purely Java. It has the capability to solve expressions respecting order of operations, including custom functions.'} 
                     img={<img src={images['calculator_gui.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
                     languageList={[LanguageDictionary.java]}
                     route={'/JavaCalculatorProject'}/>
