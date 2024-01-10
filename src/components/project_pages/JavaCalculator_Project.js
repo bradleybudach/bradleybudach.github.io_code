@@ -41,7 +41,7 @@ const JavaCalculator_Project = (props) => {
         <div className='project-body'>
             <div className='side-by-side rev'>
                 <div style={{flex: 1, alignSelf: 'center'}}>
-                    <img src={images['calculator_gui.png']} alt='Level Project' style={{maxHeight: 600}}/>
+                    <img src={images['calculator_gui.png']} alt='Calculator Application GUI' style={{maxHeight: 600}}/>
                 </div>
 
                 <div className='project-text-container'>
@@ -69,14 +69,14 @@ const JavaCalculator_Project = (props) => {
                     </div>
 
                     <div style={{flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
-                        <img src={images['calculator_solution.png']} alt='Level Project' style={{margin: 10}}/>
-                        <img src={images['calculator_solution2.png']} alt='Level Project' style={{margin: 10}}/>
+                        <img src={images['calculator_solution.png']} alt='Solution to a problem in calculator GUI' style={{margin: 10}}/>
+                        <img src={images['calculator_solution2.png']} alt='Solution to a problem in calculator GUI' style={{margin: 10}}/>
                     </div>
                 </div>
             </div>
 
             <div className='side-by-side'>
-                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['calculator_code.png']} alt='Level Project Code'/></div>
+                <div style={{flex: 1, alignSelf: 'center'}}><img src={images['calculator_code.png']} alt='Calculator Project Code'/></div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
                     <p>

@@ -52,3 +52,7 @@ body, html {
     transition-delay: 1s;
     box-sizing: border-box;
 }
+
+a {
+    color: rgb(254, 234, 0);
+}

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, forwardRef } from 'react';
+import React, { useRef, useState, forwardRef } from 'react';
 import AnimatedStar from './AnimatedStar';
 import '../styles/Contact.css';
 import '../styles/Theme.css';
@@ -38,7 +38,7 @@ const ContactSection = forwardRef((props, ref) => {
 
             <div className='contact-info' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}}>
                 <form className='contact-form' onSubmit={handleSubmit}>
-                    <h2>Want to get in contact?</h2>
+                    <h2>Want to send me a message?</h2>
                     <label>NAME:</label><br/>
                     <input title='name' name='name' type="text" value={name} onChange={(e) => setName(e.target.value)}/><br/>
                     <label>MESSAGE:</label><br/>

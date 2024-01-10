@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, forwardRef } from 'react';
+import React, { useRef, useState, forwardRef } from 'react';
 import AnimatedStar from './AnimatedStar';
 import '../styles/Projects.css';
 import '../styles/Theme.css';
@@ -68,7 +68,7 @@ const ProjectsSection = forwardRef((props, ref) => {
                 <Project 
                     title={'Wetland Code Interpreter'} 
                     description={''} 
-                    img={<img src={images['project1.png']} alt='Project'/>}
+                    img={<img src={images['wetlandCodeInterpreter_context_button.png']} alt='Project'/>}
                     languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative]}
                     route={'/WetlandCodeInterpreterProject'}/>
             </div>

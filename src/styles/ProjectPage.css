@@ -88,6 +88,7 @@
     font-family: 'Barlow', sans-serif;
     color: white;
     font-size: 20px;
+    line-height: 30px;
     margin: 0px;
 }
 
@@ -97,6 +98,7 @@
     flex: 1;
     align-self: center;
     margin: 5px;
+    justify-content: center;
 }
 
 .github-button {
