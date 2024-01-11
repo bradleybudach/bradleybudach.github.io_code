@@ -55,8 +55,8 @@ const ProjectsSection = forwardRef((props, ref) => {
                     route={'/LevelProject'}/>
                 <Project 
                     title={'Voice Photos App'} 
-                    description={'A mobile app commissioned by Geo Spatial Services used for field image capture and voice recordings. This app allows GSS Technicians to easily capture data offline and in the field.'} 
-                    img={<img src={images['project1.png']} alt='Project'/>}
+                    description={'A mobile app commissioned by GeoSpatial Services used for field image capture and voice recordings. This app allows GSS Technicians to easily capture data offline and in the field.'} 
+                    img={<img src={images['voicePhotos_Photo.png']} alt='Voice Photos Application' style={{objectFit: 'contain'}}/>}
                     languageList={[LanguageDictionary.reactNative, LanguageDictionary.javascript, LanguageDictionary.kotlin]}
                     route={'/VoicePhotosProject'}/>
                 <Project 
@@ -67,8 +67,8 @@ const ProjectsSection = forwardRef((props, ref) => {
                     route={'/JavaCalculatorProject'}/>
                 <Project 
                     title={'Wetland Code Interpreter'} 
-                    description={''} 
-                    img={<img src={images['wetlandCodeInterpreter_context_button.png']} alt='Project'/>}
+                    description={'A project for GeoSpatial Services. The Wetland Code Interpreter is both a ArcGIS Pro Add-In, and a mobile app that allows GIS Technicians to effortlessly check National Wetlands Inventory Codes.'} 
+                    img={<img src={images['wetlandCodeInterpreter_context_button.png']} alt='Wetland Code Interpreter Screenshot'/>}
                     languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative]}
                     route={'/WetlandCodeInterpreterProject'}/>
             </div>

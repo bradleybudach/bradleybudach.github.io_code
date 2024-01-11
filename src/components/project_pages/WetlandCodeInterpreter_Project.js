@@ -6,7 +6,7 @@ import HoverButton from '../HoverButton';
 import { images } from '../Images';
 
 const languageList = [LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative];
-const githubLink = '';
+const githubLink = 'https://github.com/bradleybudach/WetlandCodeInterpreter';
 
 const JavaCalculator_Project = (props) => {
     useEffect(() => {
@@ -43,7 +43,7 @@ const JavaCalculator_Project = (props) => {
                 <div className='project-text-container'>
                     <h3>OVERVIEW</h3>
                     <p>
-                        This project was commissioned by GeoSpatial Services. I was asked to create an add-in for the ARCGis Pro software and an offline app that would 
+                        This project was commissioned by GeoSpatial Services. I was asked to create an add-in for the ArcGIS Pro software and an offline app that would 
                         allow the user to parse and understand National Wetlands Inventory Codes. The user is able to simply enter a wetland code in either the app or the add-in
                         and get detailed information about the meaning of the code, and determine its validity. This allows GIS Technicians to quickly identify or check unknown codes
                         weather they are in the office or in the field. This project brought a lot of challenges, but I was able to create something that I was proud of, 
@@ -52,7 +52,7 @@ const JavaCalculator_Project = (props) => {
                 </div>
                 
                 <div style={{flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'row', alignSelf: 'center'}}>
-                        <img src={images['wetlandCodeInterpreter_GUI.png']} alt='Wetland Code Interpreter ARCGis Pro AddIn' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
+                        <img src={images['wetlandCodeInterpreter_GUI.png']} alt='Wetland Code Interpreter ArcGIS Pro AddIn' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                         <img src={images['wetlandCodeInterpreterApp_GUI.png']} alt='Wetland Code Interpreter App GUI screenshot showing home screen' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                 </div>
             </div>
