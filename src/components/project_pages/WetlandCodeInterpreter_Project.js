@@ -80,12 +80,12 @@ const JavaCalculator_Project = (props) => {
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
                     <p>
-                        Working for a company is a lot different than a personal project. The most notable change being much tigher time constraints.
+                        Working for a company is a lot different than a personal project. The most notable change being much tighter time constraints.
                         I had to learn to focus on what was important for the requirements, and manage my time carefully so I would meet those requirements on time.
-                        Coming out of the project, there are still things I would like to change. I would make UI improvements to make both versions of the application more consistent with eachother.
+                        Coming out of the project, there are still things I would like to change. I would make UI improvements to make both versions of the application more consistent with each other.
                         I would also want to make improvements to the python script with performance in mind, as I found some ways to improve the code I was given when reading it through.
-                        That brings me to the other interesting part of working on a company project, working with other peoples code. 
-                        It took me a little bit to fully parse the code I was given by the government employee. First I focused on replicating it, but as I went through and understood more of the intracicies of the code, I was able to identify and implement improvements for my JavaScript version.
+                        That brings me to the other interesting part of working on a company project, working with other people's code.
+                        It took me a little bit to fully parse the code I was given by the government employee. First I focused on replicating it, but as I went through and understood more of the intricacies of the code, I was able to identify and implement improvements for my JavaScript version.
                         Overall, I am happy with the results of this project, and I think I learned a lot. I was able to manage my time well and meet all the requirements on a tight schedule, all while implementing an application in two very different formats.
                     </p>
                 </div>

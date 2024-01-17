@@ -64,10 +64,10 @@ const LevelProject = (props) => {
             <div className='project-content-container'>
                 <h3>CHALLENGES</h3>
                 <ul>
-                    <li>Deaing with the memory constraints of microcontroller</li>
+                    <li>Dealing with the memory constraints of microcontroller</li>
                     <li>Changing language from Python to C++</li>
                     <li>Learning the math behind the angle calculation</li>
-                    <li>Maping spatial position data to the correct indicator lights</li>
+                    <li>Mapping spatial position data to the correct indicator lights</li>
                     <li>Creating intuitive user controls with only two buttons</li>
                     <li>Minimizing error in imperfect hardware</li>
                     <li>Smoothing calculation to prevent flickering lights</li>
@@ -79,12 +79,12 @@ const LevelProject = (props) => {
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
                     <p>
-                        This project taught me a lot aobut how to program microcontrollers. 
+                        This project taught me a lot about how to program microcontrollers.
                         I learned pretty quickly that memory and efficiency was a much bigger issue on this hardware than it was on most computers.
-                        When I was most of the way done with the project in Python I had to switch to C++ becuase I was running into memory issues.
-                        Switching to C++ allowed me to signifigantly increase the efficiency of the program and eliminate the memory issues I was having.
-                        The project also required a good bit of research to learn how to go from raw accelerometer data to an angle in 3d space. 
-                        But after seeing how others solved this issue, the implimentation for my project was just pretty simple trigonometry.
+                        When I was most of the way done with the project in Python I had to switch to C++ because I was running into memory issues.
+                        Switching to C++ allowed me to significantly increase the efficiency of the program and eliminate the memory issues I was having.
+                        The project also required a good bit of research to learn how to go from raw accelerometer data to an angle in 3d space.
+                        But after seeing how others solved this issue, the implementation for my project was just pretty simple trigonometry.
                         I learned a lot creating the level, but I think the biggest takeaway is all of the challenges that come with implementing programs on microcontrollers.
                         The hardware constraints force you to get creative when solving problems, and focus on efficiency. But those constraints only helped me learn more.
                     </p>

@@ -51,10 +51,10 @@ const JavaCalculator_Project = (props) => {
                 <div className='project-text-container'>
                     <h3>OVERVIEW</h3>
                     <p>
-                       I built this Calculator GUI Application using Java for a class. This project gave me some good experience with designing GUI Applications as well as algorithms.
-                       I wanted my calculator to be more interesting than just a basic do one operation on two numbers. Instead I decided to design it so it could figure out order of operations and solve full expressions.
-                       I also designed it with a focus on extensibility, creating an easy way to extend the functionality of the calculator by defining new functions.
-                       By challenging myself in this manner I learned a lot of new things.
+                        I built this Calculator GUI Application using Java for a class. This project gave me some good experience with designing GUI Applications as well as algorithms.
+                        I wanted my calculator to be more interesting than just solving one operation on two numbers. Instead I decided to design it so it could determine order of operations and solve full expressions.
+                        I also designed it with a focus on extensibility, creating an easy way to extend the functionality of the calculator by defining new functions.
+                        By challenging myself in this manner I learned a lot of new things.
                     </p>
                 </div>
             </div>
@@ -64,10 +64,10 @@ const JavaCalculator_Project = (props) => {
                 <div className='side-by-side'>
                     <div className='project-text-container'>
                         <p>
-                            The Most challenging part of this project was figuring out an algorithm to get it to handle order of operations properly.
-                            After some reasearch, I found the Shunting Yard Algorithm, which I ended up implementing and modifying for my calculator.
-                            It works by reading the expression line by line and storing values in an operator and operand stack. 
-                            This is very similar to how the CPU handles operations on a very low level. I took this basic algorithm and modified it to allow for custom functions to be 
+                            The Most challenging part of this project was figuring out an algorithm to get it to properly handle order of operations.
+                            After some research, I found the Shunting Yard Algorithm, which I ended up implementing and modifying for my calculator.
+                            It works by reading the expression line by line and storing values in an operator and operand stack.
+                            This is very similar to how the CPU handles operations on a low level. I took this basic algorithm and modified it to allow for custom functions to be
                             included and calculated in the expression.
                         </p>
                     </div>

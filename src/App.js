@@ -4,6 +4,7 @@ import VoicePhotos_Project from './components/project_pages/VoicePhotos_Project'
 import LevelProject from "./components/project_pages/Level_Project";
 import JavaCalculator_Project from "./components/project_pages/JavaCalculator_Project";
 import WetlandCodeInterpreter_Project from "./components/project_pages/WetlandCodeInterpreter_Project";
+import ErrorPage from "./components/ErrorPage";
 
 const Layout = () => {
   return (<>
@@ -22,7 +23,8 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path={'/VoicePhotosProject'} element={<VoicePhotos_Project/>}/>
     <Route path={'/LevelProject'} element={<LevelProject/>}/>
     <Route path={'/JavaCalculatorProject'} element={<JavaCalculator_Project/>}/>
-    <Route path={'/WetlandCodeInterpreterProject'} element={<WetlandCodeInterpreter_Project/>}/>
+    <Route path={'/WetlandCodeInterpreterProject'} element={<WetlandCodeInterpreter_Project/>}/>\
+    <Route path={'*'} element={<ErrorPage/>}/>
   </Route>
 ));
 

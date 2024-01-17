@@ -47,7 +47,7 @@ const StarsHeader = ({pageHeight}) => {
 
     return (<> 
         <div className='header-container'>
-            <h1 className='header-text'>SOFTWARE DEVELOPER</h1>
+            <h1 className='header-text'>DEVELOPER PORTFOLIO</h1>
         </div> 
         <div className='stars-container'>
             <canvas className='header-canvas' ref={canvasRef}/>

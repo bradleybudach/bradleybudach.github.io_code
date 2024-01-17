@@ -63,7 +63,7 @@ const JavaCalculator_Project = (props) => {
                 <ul>
                     <li>Working within tight time constraints of about two weeks</li>
                     <li>Taking feedback and applying it to the app</li>
-                    <li>Resolving issues with image exif data causing strange results</li>
+                    <li>Resolving issues with image EXIF data causing strange results</li>
                     <li>Integrating Kotlin code with React Native</li>
                     <li>Working with the security requirements of file storage and permissions on android devices</li>
                 </ul>
@@ -79,11 +79,11 @@ const JavaCalculator_Project = (props) => {
                     <h3>LESSONS LEARNED</h3>
                     <p>
                         I was given fairly tight time constraints to create this application which caused some pressure. Especially considering some of the issues I faced.
-                        I was having an issue where using the pre-made library to insert location data into each picture was also causing an unintended 90 degree rotation of that image.
+                        I was having an issue where using the premade library to insert location data into each picture was also causing an unintended 90 degree rotation of that image.
                         To fix this, I had to write my own native code to insert the location data and integrate it with React Native, which is something I had never done before.
-                        Despite this complication, I managed to complete the app on time, and I even had time to act on feedback I was given throughout the project, 
+                        Despite this complication, I managed to complete the app on time, and I even had time to act on feedback I was given throughout the project,
                         like making the action of taking a photo more clear by adding haptics.
-                        The app was used in the field in Alaska shortly after completion, and GeoSpatial Services was happy with the results. 
+                        The app was used in the field in Alaska shortly after completion, and GeoSpatial Services was happy with the results.
                         They wrote <a href='https://www.geospatialservices.org/news/2023/12/12/gss-student-staff-member-contributes-to-technology' target='_blank'>this post</a> about the projects I have done for them while at the company.
                     </p>
                 </div>

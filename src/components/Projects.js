@@ -48,6 +48,12 @@ const ProjectsSection = forwardRef((props, ref) => {
 
             <div className='projects-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}}>
                 <Project 
+                    title={'Wetland Code Interpreter'} 
+                    description={'A project for GeoSpatial Services. The Wetland Code Interpreter is both a ArcGIS Pro Add-In, and a mobile app that allows GIS Technicians to effortlessly check National Wetlands Inventory Codes.'} 
+                    img={<img src={images['wetlandCodeInterpreter_context_button.png']} alt='Wetland Code Interpreter Screenshot'/>}
+                    languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative]}
+                    route={'/WetlandCodeInterpreterProject'}/>
+                <Project 
                     title={'Digital Level'} 
                     description={'Integrating both hardware and software using a Circuit Playground, this level uses an accelerometer and LEDs to efficiently measure and indicate the flatness of a surface.'} 
                     img={<img src={images['level_project.png']} alt='Circuit Playground Level'/>}
@@ -65,12 +71,6 @@ const ProjectsSection = forwardRef((props, ref) => {
                     img={<img src={images['calculator_gui.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
                     languageList={[LanguageDictionary.java]}
                     route={'/JavaCalculatorProject'}/>
-                <Project 
-                    title={'Wetland Code Interpreter'} 
-                    description={'A project for GeoSpatial Services. The Wetland Code Interpreter is both a ArcGIS Pro Add-In, and a mobile app that allows GIS Technicians to effortlessly check National Wetlands Inventory Codes.'} 
-                    img={<img src={images['wetlandCodeInterpreter_context_button.png']} alt='Wetland Code Interpreter Screenshot'/>}
-                    languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative]}
-                    route={'/WetlandCodeInterpreterProject'}/>
             </div>
         </div>
     );
