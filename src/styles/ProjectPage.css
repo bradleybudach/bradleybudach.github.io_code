@@ -139,6 +139,17 @@
     justify-content: center;
 }
 
+@keyframes fadeInAndFly {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 60px, 0); /* Start position */
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0); /* End position (no translation) */
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .side-by-side {
         flex-direction: column;

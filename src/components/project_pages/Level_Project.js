@@ -4,6 +4,7 @@ import '../../styles/ProjectPage.css';
 import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton';
 import { images } from '../Images';
+import FadeInWrapper from '../FadeInWrapper';
 
 const languageList = [LanguageDictionary.cPlusPlus, LanguageDictionary.python];
 const githubLink = 'https://github.com/bradleybudach/CircuitPlaygroundDigitalLevel';
@@ -16,7 +17,7 @@ const LevelProject = (props) => {
     return (
     <>
     <div className='project-container'>
-        <div className='project-header'>
+        <FadeInWrapper className='project-header' startDelay={0.2}>
             <h1>Digital Level</h1>
             <div className='language-cont'>
                 {
@@ -40,9 +41,9 @@ const LevelProject = (props) => {
                 <div className='tooltip'>View Source on GitHub</div>
             </div>
             
-        </div>
+        </FadeInWrapper>
         <div className='project-body'>
-            <div className='side-by-side rev'>
+            <FadeInWrapper className='side-by-side rev' startDelay={0.5}>
                 <div className='project-text-container'>
                     <h3>OVERVIEW</h3>
                     <p>
@@ -55,13 +56,13 @@ const LevelProject = (props) => {
                 </div>
                 
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project.png']} alt='The Level Circuit'/></div>
-            </div>
+            </FadeInWrapper>
 
-            <div className='gif-container'>
+            <FadeInWrapper className='gif-container' startDelay={0.8}>
                 <img src={images['level_project.gif']} alt='Display of the level in action.' style={{width: '80%', maxWidth: '1000px'}}/>
-            </div>
+            </FadeInWrapper>
             
-            <div className='project-content-container'>
+            <FadeInWrapper className='project-content-container' startDelay={1.1}> 
                 <h3>CHALLENGES</h3>
                 <ul>
                     <li>Dealing with the memory constraints of microcontroller</li>
@@ -72,9 +73,9 @@ const LevelProject = (props) => {
                     <li>Minimizing error in imperfect hardware</li>
                     <li>Smoothing calculation to prevent flickering lights</li>
                 </ul>
-            </div>
+            </FadeInWrapper>
 
-            <div className='side-by-side'>
+            <FadeInWrapper className='side-by-side' startDelay={1.4}>
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project_code.png']} alt='The code for the Level Project'/></div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
@@ -89,7 +90,7 @@ const LevelProject = (props) => {
                         The hardware constraints force you to get creative when solving problems, and focus on efficiency. But those constraints only helped me learn more.
                     </p>
                 </div>
-            </div>
+            </FadeInWrapper>
         </div>
 
         <div className='project-buttons'>

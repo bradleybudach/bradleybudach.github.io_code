@@ -4,6 +4,7 @@ import '../../styles/ProjectPage.css';
 import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton';
 import { images } from '../Images';
+import FadeInWrapper from '../FadeInWrapper';
 
 const languageList = [LanguageDictionary.reactNative, LanguageDictionary.javascript, LanguageDictionary.kotlin];
 const githubLink = 'https://github.com/bradleybudach/Voice_Photos';
@@ -17,7 +18,7 @@ const JavaCalculator_Project = (props) => {
     return (
     <>
     <div className='project-container'>
-        <div className='project-header'>
+        <FadeInWrapper className='project-header' startDelay={0.2}>
             <h1>Voice Photos App</h1>
             <div className='language-cont'>
                 {
@@ -41,9 +42,9 @@ const JavaCalculator_Project = (props) => {
                 <div className='tooltip'>View Source on GitHub</div>
             </div>
             
-        </div>
+        </FadeInWrapper>
         <div className='project-body'>
-            <div className='side-by-side'>
+            <FadeInWrapper className='side-by-side' startDelay={0.5}>
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['voicePhotos_Title.png']} alt='Loading Screen of Voice Photos App' style={{maxHeight: 600}}/></div>
 
                 <div className='project-text-container'>
@@ -56,9 +57,9 @@ const JavaCalculator_Project = (props) => {
                         into the ArcGIS Pro software where they are used. 
                     </p>
                 </div>
-            </div>
+            </FadeInWrapper>
             
-            <div className='project-content-container'>
+            <FadeInWrapper className='project-content-container' startDelay={0.8}>
                 <h3>CHALLENGES</h3>
                 <ul>
                     <li>Working within tight time constraints of about two weeks</li>
@@ -67,9 +68,9 @@ const JavaCalculator_Project = (props) => {
                     <li>Integrating Kotlin code with React Native</li>
                     <li>Working with the security requirements of file storage and permissions on android devices</li>
                 </ul>
-            </div>
+            </FadeInWrapper>
 
-            <div className='side-by-side'>
+            <FadeInWrapper className='side-by-side' startDelay={1.1}>
                 <div style={{flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'row', alignSelf: 'center'}}>
                         <img src={images['voicePhotos_Recording.png']} alt='Voice Photos App Playing Recorded Audio' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                         <img src={images['voicePhotos_Files.png']} alt='Voice Photos App File Screen' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
@@ -87,7 +88,7 @@ const JavaCalculator_Project = (props) => {
                         They wrote <a href='https://www.geospatialservices.org/news/2023/12/12/gss-student-staff-member-contributes-to-technology' target='_blank'>this post</a> about the projects I have done for them while at the company.
                     </p>
                 </div>
-            </div>
+            </FadeInWrapper>
         </div>
 
         <div className='project-buttons'>

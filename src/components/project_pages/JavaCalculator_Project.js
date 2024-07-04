@@ -4,11 +4,13 @@ import '../../styles/ProjectPage.css';
 import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton';
 import { images } from '../Images';
+import FadeInWrapper from '../FadeInWrapper';
 
 const languageList = [LanguageDictionary.java];
 const githubLink = 'https://github.com/bradleybudach/JavaCalculator';
 
 const JavaCalculator_Project = (props) => {
+    
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []); // scroll to top on load
@@ -17,7 +19,7 @@ const JavaCalculator_Project = (props) => {
     return (
     <>
     <div className='project-container'>
-        <div className='project-header'>
+        <FadeInWrapper className='project-header' startDelay={0.2}>
             <h1>Java Calculator</h1>
             <div className='language-cont'>
                 {
@@ -41,9 +43,10 @@ const JavaCalculator_Project = (props) => {
                 <div className='tooltip'>View Source on GitHub</div>
             </div>
             
-        </div>
+        </FadeInWrapper>
+
         <div className='project-body'>
-            <div className='side-by-side rev'>
+            <FadeInWrapper className='side-by-side rev' startDelay={0.5}>
                 <div style={{flex: 1, alignSelf: 'center'}}>
                     <img src={images['calculator_gui.png']} alt='Calculator Application GUI' style={{maxHeight: 600}}/>
                 </div>
@@ -57,9 +60,9 @@ const JavaCalculator_Project = (props) => {
                         By challenging myself in this manner I learned a lot of new things.
                     </p>
                 </div>
-            </div>
+            </FadeInWrapper>
             
-            <div className='project-content-container'>
+            <FadeInWrapper className='project-content-container' startDelay={0.8}>
                 <h3>THE ALGORITHM</h3>
                 <div className='side-by-side'>
                     <div className='project-text-container'>
@@ -77,9 +80,9 @@ const JavaCalculator_Project = (props) => {
                         <img src={images['calculator_solution2.png']} alt='Solution to a problem in calculator GUI' style={{margin: 10}}/>
                     </div>
                 </div>
-            </div>
+            </FadeInWrapper>
 
-            <div className='side-by-side'>
+            <FadeInWrapper className='side-by-side' startDelay={1.1}>
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['calculator_code.png']} alt='Calculator Project Code'/></div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
@@ -90,7 +93,7 @@ const JavaCalculator_Project = (props) => {
                         I could have just done a basic calculator that does the standard operations, but because I chose to take on a harder challenge, I learned way more than I would have otherwise.
                     </p>
                 </div>
-            </div>
+            </FadeInWrapper>
         </div>
 
         <div className='project-buttons'>

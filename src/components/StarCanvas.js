@@ -17,7 +17,7 @@ const StarsHeader = ({pageHeight}) => {
         const displayWidth = visualViewport.width;
         const displayHeight = pageHeight+200;
         canvas.style.width = '100%';
-        canvas.style.height =  pageHeight+200 + 'px';
+        canvas.style.height =  displayHeight + 'px';
         canvas.width = displayWidth;
         canvas.height = displayHeight;
         context.fillStyle = '#FFFFFF';

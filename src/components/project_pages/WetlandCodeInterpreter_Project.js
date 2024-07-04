@@ -4,11 +4,13 @@ import '../../styles/ProjectPage.css';
 import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton';
 import { images } from '../Images';
+import FadeInWrapper from '../FadeInWrapper';
 
 const languageList = [LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative];
 const githubLink = 'https://github.com/bradleybudach/WetlandCodeInterpreter';
 
 const JavaCalculator_Project = (props) => {
+
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []); // scroll to top on load
@@ -17,7 +19,7 @@ const JavaCalculator_Project = (props) => {
     return (
     <>
     <div className='project-container'>
-        <div className='project-header'>
+        <FadeInWrapper className='project-header' startDelay={0.2}>
             <h1>Wetland Code Interpreter</h1>
             <div className='language-cont'>
                 {
@@ -41,9 +43,9 @@ const JavaCalculator_Project = (props) => {
                 <div className='tooltip'>View Source on GitHub</div>
             </div>
             
-        </div>
+        </FadeInWrapper>
         <div className='project-body'>
-            <div className='side-by-side rev'>
+            <FadeInWrapper className='side-by-side rev' startDelay={0.5}>
                 <div className='project-text-container'>
                     <h3>OVERVIEW</h3>
                     <p>
@@ -59,9 +61,9 @@ const JavaCalculator_Project = (props) => {
                         <img src={images['wetlandCodeInterpreter_GUI.png']} alt='Wetland Code Interpreter ArcGIS Pro AddIn' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                         <img src={images['wetlandCodeInterpreterApp_GUI.png']} alt='Wetland Code Interpreter App GUI screenshot showing home screen' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                 </div>
-            </div>
+            </FadeInWrapper>
             
-            <div className='project-content-container'>
+            <FadeInWrapper className='project-content-container' startDelay={0.8}>
                 <h3>CHALLENGES</h3>
                 <ul>
                     <li>I was only given 1 week to work on the project</li>
@@ -70,9 +72,9 @@ const JavaCalculator_Project = (props) => {
                     <li>Testing and ensuring consistency on all platforms</li>
                     <li>Integrating a python script with the WPF Application</li>
                 </ul>
-            </div>
+            </FadeInWrapper>
 
-            <div className='side-by-side'>
+            <FadeInWrapper className='side-by-side' startDelay={1.1}>
                 <div style={{flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'row', alignSelf: 'center'}}>
                         <img src={images['wetlandCodeInterpreterApp_Result.png']} alt='Wetland Code Interpreter App GUI screenshot showing parsed code' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                         <img src={images['wetlandCodeInterpreterApp_Error.png']} alt='Wetland Code Interpreter App GUI screenshot showing invalid code message' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
@@ -89,7 +91,7 @@ const JavaCalculator_Project = (props) => {
                         Overall, I am happy with the results of this project, and I think I learned a lot. I was able to manage my time well and meet all the requirements on a tight schedule, all while implementing an application in two very different formats.
                     </p>
                 </div>
-            </div>
+            </FadeInWrapper>
         </div>
 
         <div className='project-buttons'>
