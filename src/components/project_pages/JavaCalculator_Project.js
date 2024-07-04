@@ -26,7 +26,7 @@ const JavaCalculator_Project = (props) => {
                     languageList.map(language => {
                         return (
                             <div key={language.text} className='language-display'>
-                                <div className='language-color' style={{backgroundColor: language.color}}/>
+                                <div className='language-color' style={{background: language.color}}/>
                                 {language.text}
                             </div>
                         )

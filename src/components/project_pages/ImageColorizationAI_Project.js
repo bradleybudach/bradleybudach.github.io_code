@@ -6,10 +6,10 @@ import HoverButton from '../HoverButton';
 import { images } from '../Images';
 import FadeInWrapper from '../FadeInWrapper';
 
-const languageList = [LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative];
+const languageList = [LanguageDictionary.python, LanguageDictionary.keras, LanguageDictionary.tensorflow];
 const githubLink = 'https://github.com/bradleybudach/WetlandCodeInterpreter';
 
-const JavaCalculator_Project = (props) => {
+const ImageColorizationAI_Project = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -111,4 +111,4 @@ const JavaCalculator_Project = (props) => {
 
 
 
-export default JavaCalculator_Project;
+export default ImageColorizationAI_Project;

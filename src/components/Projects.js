@@ -9,18 +9,20 @@ import { images } from './Images';
 
 // Dictionary for possible languages to display on projects
 export const LanguageDictionary = {
-    hmtl: {color: '#D2B48C', text: 'HTML'},
-    css: {color: '#ADD8E6', text: 'CSS'},
-    javascript: {color: '#FFA500', text: 'JS'},
-    java: {color: '#964B00', text: 'Java'},
-    react: {color: '#800000', text: 'React'},
-    reactNative: {color: '#CC7000', text: 'React Native'},
-    cSharp: {color: '#CC8899', text: 'C#'},
-    cPlusPlus: {color: '#00578A', text: 'C++'},
-    WPF: {color: '#301934', text: 'WPF'},
-    python: {color: '#FFFF00', text: 'Python'},
-    kotlin: {color: '#FCD299', text: 'Kotlin'},
-    xaml: {color: '#800060', text: 'XAML'},
+    hmtl: {color: '#E44D26', text: 'HTML'},
+    css: {color: '#214CE5', text: 'CSS'},
+    javascript: {color: '#EFDA4D', text: 'JS'},
+    java: {color: 'linear-gradient(#C32F06, #6E9AE4)', text: 'Java'},
+    react: {color: '#0D7D9D', text: 'React'},
+    reactNative: {color: '#58D7EC', text: 'React Native'},
+    cSharp: {color: 'linear-gradient(-45deg, #502FDA, #8F78E0)', text: 'C#'},
+    cPlusPlus: {color: 'linear-gradient(-45deg, #004681, #6499CC)', text: 'C++'},
+    WPF: {color: '#015B9A', text: 'WPF'},
+    python: {color: 'linear-gradient(-45deg, #254F73, #FFDC50)', text: 'Python'},
+    kotlin: {color: 'linear-gradient(#E35176, #C50CE3, #8F66FE)', text: 'Kotlin'},
+    xaml: {color: '#000000', text: 'XAML'},
+    keras: {color: '#D00000', text: 'Keras'},
+    tensorflow: {color: '#FF6F00', text: 'Tensorflow'}
 };
 
 // forwards ref of title back to navigation to allow for scrolling to this section
@@ -71,6 +73,13 @@ const ProjectsSection = forwardRef((props, ref) => {
                     img={<img src={images['calculator_gui.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
                     languageList={[LanguageDictionary.java]}
                     route={'/JavaCalculatorProject'}/>
+                <Project
+                    title={'Image Colorization AI'}
+                    description={'A machine learning project that attempts to colorize grayscale images. This project uses deep learning frameworks to predict missing color values from images.'}
+                    img={<img src={images['colorizer_ai_overview.png']} alt={'Image Colorization Example'} style={{objectFit: 'contain'}}/>}
+                    languageList={[LanguageDictionary.python, LanguageDictionary.keras, LanguageDictionary.tensorflow]}
+                    route={'/ImageColorizationAIProject'}
+                    />
             </div>
         </div>
     );
@@ -133,7 +142,7 @@ const Project = ({title, description, img, languageList, route}) => {
                             languageList.map(language => {
                                 return (
                                     <div key={language.text} className='language-display'>
-                                        <div className='language-color' style={{backgroundColor: language.color}}/>
+                                        <div className='language-color' style={{background: language.color}}/>
                                         {language.text}
                                     </div>
                                 )
