@@ -58,7 +58,7 @@ const LevelProject = (props) => {
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project.png']} alt='The Level Circuit'/></div>
             </FadeInWrapper>
 
-            <FadeInWrapper className='gif-container' startDelay={0.8}>
+            <FadeInWrapper className='image-container' startDelay={0.8}>
                 <img src={images['level_project.gif']} alt='Display of the level in action.' style={{width: '80%', maxWidth: '1000px'}}/>
             </FadeInWrapper>
             

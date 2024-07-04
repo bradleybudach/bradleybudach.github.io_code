@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const FadeInWrapper = ({ children, startDelay, fadeInDuration = 0.8, className }) => {
+const FadeInWrapper = ({ children, startDelay, fadeInDuration = 0.8, className, style }) => {
     const [fadeIn, setFadeIn] = useState(false); 
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const FadeInWrapper = ({ children, startDelay, fadeInDuration = 0.8, className }
 
 
     return (
-        <div className={`${className}`} style={{transition: `${fadeInDuration}s`, opacity: fadeIn ? 100 : 0, transform: fadeIn ? 'translate3d(0, 0, 0)' : 'translate3d(0, 60px, 0)'}}>
+        <div className={`${className}`} style={{transition: `${fadeInDuration}s`, opacity: fadeIn ? 100 : 0, transform: fadeIn ? 'translate3d(0, 0, 0)' : 'translate3d(0, 60px, 0)', ...style}}>
             {children}
         </div>
     );
