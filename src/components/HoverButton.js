@@ -3,7 +3,7 @@ import '../styles/HoverButton.css'
 import { useNavigate } from 'react-router-dom';
 import { size } from 'lodash';
 
-const HoverButton = ({text, link, navigate, target, width, style, buttonOverride, colors}) => {
+const HoverButton = ({text, link, navigate, target, width, style, buttonOverride, onClick, colors}) => {
     // button override lets an outside source handle the hover and on-click (button functionality). Holds isHovering info
     const [isHovering, setIsHovering] = useState(false); // is this component being hovered
     const buttonRef = useRef(null);
@@ -40,7 +40,7 @@ const HoverButton = ({text, link, navigate, target, width, style, buttonOverride
             <button className='details-button' style={{
                 paddingRight: (isHovering || buttonOverride) ? 30 : 0,
                 backgroundColor: (colors && colors.main) ? colors.main : 'rgba(254, 234, 0, 0.5)'
-                }} ref={buttonRef}>{text}</button>
+                }} ref={buttonRef} onClick={onClick}>{text}</button>
             <div id='b1' style={{
                 transform: (isHovering || buttonOverride) ? 'translate(-15px, 0px)' : 'translate(0px, 0px)',
                 backgroundColor: (colors && colors.one) ? colors.one : 'red'

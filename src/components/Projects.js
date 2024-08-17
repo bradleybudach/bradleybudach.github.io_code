@@ -25,65 +25,6 @@ export const LanguageDictionary = {
     tensorflow: {color: '#FF6F00', text: 'Tensorflow'}
 };
 
-// forwards ref of title back to navigation to allow for scrolling to this section
-const ProjectsSection = forwardRef((props, ref) => {
-    const starTarget = useRef(null); // Ref used for AnimatedStar
-    const [isComponentVisible, setIsComponentVisible] = useState(false); // visibility used for appearance animations
-
-    // callback function from AnimatedStar
-    const starAnimEvent = (visibility) => { 
-        setIsComponentVisible(visibility);
-    };
-
-    return (
-        <div className='section-container' ref={ref}>
-            <AnimatedStar targetRef={starTarget} startOffset={{X: 200, Y: 50}} animationStartOffset={50} scrollLength={300} callbackRef={starAnimEvent}/>
-            <div className='title-container' ref={starTarget}>
-                <div className='title-border' style={{
-                    visibility: (isComponentVisible) ? 'visible' : 'hidden',
-                    width: (isComponentVisible) ? 200 : 0,
-                    transitionDelay: (isComponentVisible) ? '0.5s' : '0s',
-                }}>
-                    <h2 className='section-title'>PROJECTS</h2>
-                </div>
-            </div>
-
-            <div className='projects-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}}>
-                <Project 
-                    title={'Wetland Code Interpreter'} 
-                    description={'A project for GeoSpatial Services. The Wetland Code Interpreter is both a ArcGIS Pro Add-In, and a mobile app that allows GIS Technicians to effortlessly check National Wetlands Inventory Codes.'} 
-                    img={<img src={images['wetlandCodeInterpreter_context_button.png']} alt='Wetland Code Interpreter Screenshot'/>}
-                    languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative]}
-                    route={'/WetlandCodeInterpreterProject'}/>
-                <Project 
-                    title={'Digital Level'} 
-                    description={'Integrating both hardware and software using a Circuit Playground, this level uses an accelerometer and LEDs to efficiently measure and indicate the flatness of a surface.'} 
-                    img={<img src={images['level_project.png']} alt='Circuit Playground Level'/>}
-                    languageList={[LanguageDictionary.cPlusPlus, LanguageDictionary.python]}
-                    route={'/LevelProject'}/>
-                <Project 
-                    title={'Voice Photos App'} 
-                    description={'A mobile app commissioned by GeoSpatial Services used for field image capture and voice recordings. This app allows GSS Technicians to easily capture data offline and in the field.'} 
-                    img={<img src={images['voicePhotos_Photo.png']} alt='Voice Photos Application' style={{objectFit: 'contain'}}/>}
-                    languageList={[LanguageDictionary.reactNative, LanguageDictionary.javascript, LanguageDictionary.kotlin]}
-                    route={'/VoicePhotosProject'}/>
-                <Project 
-                    title={'Java Calculator'} 
-                    description={'A calculator built using purely Java. It has the capability to solve expressions respecting order of operations, including custom functions.'} 
-                    img={<img src={images['calculator_gui.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
-                    languageList={[LanguageDictionary.java]}
-                    route={'/JavaCalculatorProject'}/>
-                <Project
-                    title={'Image Colorization AI'}
-                    description={'A machine learning project that attempts to colorize grayscale images. This project uses deep learning frameworks to predict missing color values from images.'}
-                    img={<img src={images['colorizer_ai_overview.png']} alt={'Image Colorization Example'} style={{objectFit: 'contain'}}/>}
-                    languageList={[LanguageDictionary.python, LanguageDictionary.keras, LanguageDictionary.tensorflow]}
-                    route={'/ImageColorizationAIProject'}
-                    />
-            </div>
-        </div>
-    );
-});
 
 // Project Component
 const Project = ({title, description, img, languageList, route}) => {
@@ -155,6 +96,77 @@ const Project = ({title, description, img, languageList, route}) => {
         </div>
     );
 }
+
+const ProjectsArray = [
+    <Project 
+        title={'Wetland Code Interpreter'} 
+        description={'A project for GeoSpatial Services. The Wetland Code Interpreter is both a ArcGIS Pro Add-In, and a mobile app that allows GIS Technicians to effortlessly check National Wetlands Inventory Codes.'} 
+        img={<img src={images['wetlandCodeInterpreter_context_button.png']} alt='Wetland Code Interpreter Screenshot'/>}
+        languageList={[LanguageDictionary.cSharp, LanguageDictionary.WPF, LanguageDictionary.xaml, LanguageDictionary.reactNative]}
+        route={'/WetlandCodeInterpreterProject'}/>,
+    <Project 
+        title={'Digital Level'} 
+        description={'Integrating both hardware and software using a Circuit Playground, this level uses an accelerometer and LEDs to efficiently measure and indicate the flatness of a surface.'} 
+        img={<img src={images['level_project.png']} alt='Circuit Playground Level'/>}
+        languageList={[LanguageDictionary.cPlusPlus, LanguageDictionary.python]}
+        route={'/LevelProject'}/>,
+    <Project 
+        title={'Voice Photos App'} 
+        description={'A mobile app commissioned by GeoSpatial Services used for field image capture and voice recordings. This app allows GSS Technicians to easily capture data offline and in the field.'} 
+        img={<img src={images['voicePhotos_Photo.png']} alt='Voice Photos Application' style={{objectFit: 'contain'}}/>}
+        languageList={[LanguageDictionary.reactNative, LanguageDictionary.javascript, LanguageDictionary.kotlin]}
+        route={'/VoicePhotosProject'}/>,
+    <Project
+        title={'Image Colorization AI'}
+        description={'A machine learning project that attempts to colorize grayscale images. This project uses deep learning frameworks to predict missing color values from images.'}
+        img={<img src={images['colorizer_ai_overview.png']} alt={'Image Colorization Example'} style={{objectFit: 'contain'}}/>}
+        languageList={[LanguageDictionary.python, LanguageDictionary.keras, LanguageDictionary.tensorflow]}
+        route={'/ImageColorizationAIProject'}
+        />,
+    <Project 
+        title={'Java Calculator'} 
+        description={'A calculator built using purely Java. It has the capability to solve expressions respecting order of operations, including custom functions.'} 
+        img={<img src={images['calculator_gui.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
+        languageList={[LanguageDictionary.java]}
+        route={'/JavaCalculatorProject'}/>,
+];
+
+// forwards ref of title back to navigation to allow for scrolling to this section
+const ProjectsSection = forwardRef((props, ref) => {
+    const starTarget = useRef(null); // Ref used for AnimatedStar
+    const [isComponentVisible, setIsComponentVisible] = useState(false); // visibility used for appearance animations
+    const [projectsDisplayedCount, setProjectsDisplayedCount] = useState(4); // how many projects to display on the page
+
+    // callback function from AnimatedStar
+    const starAnimEvent = (visibility) => { 
+        setIsComponentVisible(visibility);
+    };
+
+    const showMoreProjects = () => {
+        setProjectsDisplayedCount(Math.min(projectsDisplayedCount + 4, ProjectsArray.length));
+        setTimeout(() => {  window.dispatchEvent(new Event('resize')); }, 100); // wait slighly to give page time to update before resize event
+    };
+
+    return (
+        <div className='section-container' ref={ref}>
+            <AnimatedStar targetRef={starTarget} startOffset={{X: 200, Y: 50}} animationStartOffset={50} scrollLength={300} callbackRef={starAnimEvent}/>
+            <div className='title-container' ref={starTarget}>
+                <div className='title-border' style={{
+                    visibility: (isComponentVisible) ? 'visible' : 'hidden',
+                    width: (isComponentVisible) ? 200 : 0,
+                    transitionDelay: (isComponentVisible) ? '0.5s' : '0s',
+                }}>
+                    <h2 className='section-title'>PROJECTS</h2>
+                </div>
+            </div>
+
+            <div className='projects-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}}>
+                {ProjectsArray.slice(0, projectsDisplayedCount)}
+            </div>
+            <HoverButton text={'More Projects'} width={170} style={{opacity: (isComponentVisible && projectsDisplayedCount < ProjectsArray.length) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s'}} onClick={showMoreProjects}/>
+        </div>
+    );
+});
 
 
 export default ProjectsSection;

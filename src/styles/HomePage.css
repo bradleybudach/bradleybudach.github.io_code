@@ -3,6 +3,28 @@
   flex-direction: column;
 }
 
+.header-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-text {
+  font-family: 'Barlow', sans-serif;
+  position: absolute;
+  font-size: 5vw;
+  margin: auto;
+  color: white;
+  background-color: rgba(118, 146, 255, 0.25);
+  border-radius: 15px;
+  padding: 10px 40px 10px 40px;
+  z-index: 1;
+  text-align: center;
+}
+
 .header-title {
   display: flex;
   position: fixed;
@@ -51,6 +73,14 @@
   padding: 10px;
   font-size: 15px;
   color: white;
+}
+
+.test-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgb(0, 5, 40), rgb(3,37,126));
+  z-index: -1;
 }
 
 @media only screen and (max-width: 800px) {

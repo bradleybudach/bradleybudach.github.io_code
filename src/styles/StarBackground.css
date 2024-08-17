@@ -1,0 +1,32 @@
+.shooting-star {
+    position: absolute;
+    background-color: rgb(254, 234, 0);
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    z-index: 0;
+}
+
+.fixed-star {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  z-index: 0;
+}
+  
+.star-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgb(0, 5, 40), rgb(3,37,126));
+  z-index: -1;
+}
+
+@media only screen and (max-width: 800px) {
+  .header-text {
+    padding: 10px;
+    font-size: 8vw;
+  }
+}

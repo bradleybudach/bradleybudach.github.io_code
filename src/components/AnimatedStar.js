@@ -34,7 +34,7 @@ const AnimatedStar = ({targetRef, startOffset, animationStartOffset, scrollLengt
         if (!targetRef) { // await target ref
             return;
         }
-
+        
         getTargetPosition();
     }, 100); // throttle to 100ms for performance
 

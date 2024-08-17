@@ -1,10 +1,9 @@
 import '../styles/HomePage.css';
 import '../styles/Theme.css';
-import StarsHeader from './StarCanvas';
 import AboutMeSection from './AboutMe';
 import ProjectsSection from './Projects';
 import ContactSection from './ContactMe';
-import useHeight from './useHeight';
+import StarsBackground from './StarsBackground';
 import { forwardRef, useEffect, useRef } from 'react';
 
 // nav dictionary:
@@ -23,9 +22,6 @@ const HomePage = () => {
     const projectsSectionRef = useRef(null);
     const contactSectionRef = useRef(null);
     const footerRef = useRef(null);
-
-    const mainContainer = useRef(null);
-    const pageHeight = useHeight(mainContainer);
 
     const navigate = (target) => { // scroll to target components
         let y = 0;
@@ -50,8 +46,9 @@ const HomePage = () => {
     }
 
     return (
-        <div className='main' ref={mainContainer}>
-            <Header navigationFunction={navigate} pageHeight={pageHeight}/>
+        <div className='main'>
+            <StarsBackground/>
+            <Header navigationFunction={navigate}/>
             <div className='sections'>
                 <AboutMeSection ref={aboutMeSectionRef}/>
                 <ProjectsSection ref={projectsSectionRef}/>
@@ -63,7 +60,7 @@ const HomePage = () => {
 };
   
 // Defines header/nav-bar:
-const Header = ({navigationFunction, pageHeight}) => {
+const Header = ({navigationFunction}) => {
     return (
         <div className='header'>
             <div className='header-title'>
@@ -74,7 +71,9 @@ const Header = ({navigationFunction, pageHeight}) => {
                     <p onClick={() => {navigationFunction(Navigation.Contact)}}>Contact Me</p>
                 </div>
             </div>
-            <StarsHeader pageHeight={pageHeight}/>
+            <div className='header-container'>
+                <h1 className='header-text'>DEVELOPER PORTFOLIO</h1>
+            </div>
         </div>
     );
 };
