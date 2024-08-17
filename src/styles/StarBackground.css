@@ -5,6 +5,8 @@
     width: 7px;
     height: 7px;
     z-index: 0;
+    animation-name: star-twinkle;
+    animation-iteration-count: infinite;
 }
 
 .fixed-star {
@@ -14,6 +16,8 @@
   width: 7px;
   height: 7px;
   z-index: 0;
+  animation-name: star-twinkle;
+  animation-iteration-count: infinite;
 }
   
 .star-background {
@@ -22,6 +26,18 @@
   width: 100%;
   background-image: linear-gradient(rgb(0, 5, 40), rgb(3,37,126));
   z-index: -1;
+}
+
+@keyframes star-twinkle {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 @media only screen and (max-width: 800px) {

@@ -62,7 +62,9 @@ const Star = ({pageHeight}) => {
         opacity: opacity,
         transition: (opacity == 0) ? '0s' : 'ease-out ' + (Math.random()*0.5+0.5) + 's',
         left: xPos, 
-        top: yPos
+        top: yPos,
+        animationDuration: (Math.random() > 0.5) ? '2s' : 'unset',
+        animationDelay: (Math.random()*5+0.5) + 's'
         }}/>
     );
 }
@@ -137,7 +139,9 @@ const ShootingStar = ({pageHeight}) => {
         transition: (opacity == 0) ? '0s' : 'ease-out ' + (Math.random()*0.5+0.5) + 's',
         left: xPos, 
         top: yPos,
-        opacity: opacity
+        opacity: opacity,
+        animationDuration: (Math.random() > 0.5) ? '2s' : 'unset',
+        animationDelay: (Math.random()*5+0.5) + 's'
         }}/>
     );
 

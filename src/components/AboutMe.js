@@ -27,7 +27,7 @@ const AboutMeSection = forwardRef((props, ref) => {
                 </div>
             </div>
             
-            <div className='content-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s', transitionDuration: (isComponentVisible) ? '0.5s' : '0s'}}>
+            <div className='content-container' style={{opacity: (isComponentVisible) ? 1 : 0, transitionDelay: (isComponentVisible) ? '0.5s' : '0s', transitionDuration: (isComponentVisible) ? '0.5s' : '0s',  backgroundColor: 'rgba(10, 10, 50, 0.8)', borderRadius: 10}}>
                 <div className='img-container'>
                     <img src={images['profile.png']} alt='Profile'/>
                 </div>
