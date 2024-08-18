@@ -19,7 +19,7 @@ const JavaCalculator_Project = (props) => {
     return (
     <>
     <div className='project-container'>
-        <FadeInWrapper className='project-header' startDelay={0.2}>
+        <FadeInWrapper className='project-header'>
             <h1>Java Calculator</h1>
             <div className='language-cont'>
                 {
@@ -46,7 +46,7 @@ const JavaCalculator_Project = (props) => {
         </FadeInWrapper>
 
         <div className='project-body'>
-            <FadeInWrapper className='side-by-side rev' startDelay={0.5}>
+            <FadeInWrapper className='side-by-side rev'>
                 <div style={{flex: 1, alignSelf: 'center'}}>
                     <img src={images['calculator_gui.png']} alt='Calculator Application GUI' style={{maxHeight: 600}}/>
                 </div>
@@ -62,7 +62,7 @@ const JavaCalculator_Project = (props) => {
                 </div>
             </FadeInWrapper>
             
-            <FadeInWrapper className='project-content-container' startDelay={0.8}>
+            <FadeInWrapper className='project-content-container'>
                 <h3>THE ALGORITHM</h3>
                 <div className='side-by-side'>
                     <div className='project-text-container'>
@@ -82,7 +82,7 @@ const JavaCalculator_Project = (props) => {
                 </div>
             </FadeInWrapper>
 
-            <FadeInWrapper className='side-by-side' startDelay={1.1}>
+            <FadeInWrapper className='side-by-side'>
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['calculator_code.png']} alt='Calculator Project Code'/></div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>

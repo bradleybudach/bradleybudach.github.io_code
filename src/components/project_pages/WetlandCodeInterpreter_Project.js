@@ -19,7 +19,7 @@ const JavaCalculator_Project = (props) => {
     return (
     <>
     <div className='project-container'>
-        <FadeInWrapper className='project-header' startDelay={0.2}>
+        <FadeInWrapper className='project-header'>
             <h1>Wetland Code Interpreter</h1>
             <div className='language-cont'>
                 {
@@ -45,7 +45,7 @@ const JavaCalculator_Project = (props) => {
             
         </FadeInWrapper>
         <div className='project-body'>
-            <FadeInWrapper className='side-by-side rev' startDelay={0.5}>
+            <FadeInWrapper className='side-by-side rev'>
                 <div className='project-text-container'>
                     <h3>OVERVIEW</h3>
                     <p>
@@ -63,7 +63,7 @@ const JavaCalculator_Project = (props) => {
                 </div>
             </FadeInWrapper>
             
-            <FadeInWrapper className='project-content-container' startDelay={0.8}>
+            <FadeInWrapper className='project-content-container'>
                 <h3>CHALLENGES</h3>
                 <ul>
                     <li>I was only given 1 week to work on the project</li>
@@ -74,7 +74,7 @@ const JavaCalculator_Project = (props) => {
                 </ul>
             </FadeInWrapper>
 
-            <FadeInWrapper className='side-by-side' startDelay={1.1}>
+            <FadeInWrapper className='side-by-side'>
                 <div style={{flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'row', alignSelf: 'center'}}>
                         <img src={images['wetlandCodeInterpreterApp_Result.png']} alt='Wetland Code Interpreter App GUI screenshot showing parsed code' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                         <img src={images['wetlandCodeInterpreterApp_Error.png']} alt='Wetland Code Interpreter App GUI screenshot showing invalid code message' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>

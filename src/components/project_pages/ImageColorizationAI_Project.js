@@ -19,7 +19,7 @@ const ImageColorizationAI_Project = (props) => {
     return (
     <>
     <div className='project-container'>
-        <FadeInWrapper className='project-header' startDelay={0.2}>
+        <FadeInWrapper className='project-header'>
             <h1>Image Colorization AI</h1>
             <div className='language-cont'>
                 {
@@ -45,11 +45,11 @@ const ImageColorizationAI_Project = (props) => {
             
         </FadeInWrapper>
         <div className='project-body'>
-            <FadeInWrapper className='image-container' startDelay={0.2}>
+            <FadeInWrapper className='image-container'>
                 <img src={images['colorizer_ai_details.png']} alt='Structure of the AI model' style={{width: '80%', maxWidth: '1000px'}}/>
             </FadeInWrapper>
 
-            <FadeInWrapper className='project-text-container' startDelay={0.5}>
+            <FadeInWrapper className='project-text-container'>
                 <h3>OVERVIEW</h3>
                 <p>
                     This project was created as the final project for a Deep Learning class at Winona State University. 
@@ -64,14 +64,14 @@ const ImageColorizationAI_Project = (props) => {
                 </p>
             </FadeInWrapper>
             
-            <FadeInWrapper className='project-text-container' startDelay={0.8}>
+            <FadeInWrapper className='project-text-container'>
                 <h3>MODEL RESULTS</h3>
                 <div className='image-container' >
                     <img src={images['colorizer_ai_results.png']} alt='Results of the AI model' style={{maxWidth: '1000px'}}/>
                 </div>
             </FadeInWrapper>
 
-            <FadeInWrapper className='project-content-container' startDelay={1.1}>
+            <FadeInWrapper className='project-content-container'>
                 <h3>CHALLENGES</h3>
                 <ul>
                     <li>Using Google Colab and running into usage limits when trying to trian the AI</li>
@@ -84,7 +84,7 @@ const ImageColorizationAI_Project = (props) => {
             </FadeInWrapper>
 
 
-            <FadeInWrapper className='side-by-side' startDelay={1.4}>
+            <FadeInWrapper className='side-by-side'>
                 <div style={{flex: 1, alignSelf: 'center'}}>
                     <img src={images['colorizer_ai_accuracy.png']} alt='Accuracy metric for the AI model' style={{maxHeight: 600}}/>
                 </div>

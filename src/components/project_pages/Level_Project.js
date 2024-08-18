@@ -17,7 +17,7 @@ const LevelProject = (props) => {
     return (
     <>
     <div className='project-container'>
-        <FadeInWrapper className='project-header' startDelay={0.2}>
+        <FadeInWrapper className='project-header'>
             <h1>Digital Level</h1>
             <div className='language-cont'>
                 {
@@ -43,7 +43,7 @@ const LevelProject = (props) => {
             
         </FadeInWrapper>
         <div className='project-body'>
-            <FadeInWrapper className='side-by-side rev' startDelay={0.5}>
+            <FadeInWrapper className='side-by-side rev'>
                 <div className='project-text-container'>
                     <h3>OVERVIEW</h3>
                     <p>
@@ -58,11 +58,11 @@ const LevelProject = (props) => {
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project.png']} alt='The Level Circuit'/></div>
             </FadeInWrapper>
 
-            <FadeInWrapper className='image-container' startDelay={0.8}>
+            <FadeInWrapper className='image-container'>
                 <img src={images['level_project.gif']} alt='Display of the level in action.' style={{width: '80%', maxWidth: '1000px'}}/>
             </FadeInWrapper>
             
-            <FadeInWrapper className='project-content-container' startDelay={1.1}> 
+            <FadeInWrapper className='project-content-container'> 
                 <h3>CHALLENGES</h3>
                 <ul>
                     <li>Dealing with the memory constraints of microcontroller</li>
@@ -75,7 +75,7 @@ const LevelProject = (props) => {
                 </ul>
             </FadeInWrapper>
 
-            <FadeInWrapper className='side-by-side' startDelay={1.4}>
+            <FadeInWrapper className='side-by-side'>
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['level_project_code.png']} alt='The code for the Level Project'/></div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>

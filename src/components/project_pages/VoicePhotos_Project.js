@@ -18,7 +18,7 @@ const JavaCalculator_Project = (props) => {
     return (
     <>
     <div className='project-container'>
-        <FadeInWrapper className='project-header' startDelay={0.2}>
+        <FadeInWrapper className='project-header'>
             <h1>Voice Photos App</h1>
             <div className='language-cont'>
                 {
@@ -44,7 +44,7 @@ const JavaCalculator_Project = (props) => {
             
         </FadeInWrapper>
         <div className='project-body'>
-            <FadeInWrapper className='side-by-side' startDelay={0.5}>
+            <FadeInWrapper className='side-by-side'>
                 <div style={{flex: 1, alignSelf: 'center'}}><img src={images['voicePhotos_Title.png']} alt='Loading Screen of Voice Photos App' style={{maxHeight: 600}}/></div>
 
                 <div className='project-text-container'>
@@ -59,7 +59,7 @@ const JavaCalculator_Project = (props) => {
                 </div>
             </FadeInWrapper>
             
-            <FadeInWrapper className='project-content-container' startDelay={0.8}>
+            <FadeInWrapper className='project-content-container'>
                 <h3>CHALLENGES</h3>
                 <ul>
                     <li>Working within tight time constraints of about two weeks</li>
@@ -70,7 +70,7 @@ const JavaCalculator_Project = (props) => {
                 </ul>
             </FadeInWrapper>
 
-            <FadeInWrapper className='side-by-side' startDelay={1.1}>
+            <FadeInWrapper className='side-by-side'>
                 <div style={{flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'row', alignSelf: 'center'}}>
                         <img src={images['voicePhotos_Recording.png']} alt='Voice Photos App Playing Recorded Audio' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                         <img src={images['voicePhotos_Files.png']} alt='Voice Photos App File Screen' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>

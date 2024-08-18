@@ -81,3 +81,9 @@ a {
     visibility: visible;
     opacity: 0.75;
 }
+
+@media only screen and (max-width: 800px) {
+    .section-container {
+        margin-top: 40px;
+    }
+}
