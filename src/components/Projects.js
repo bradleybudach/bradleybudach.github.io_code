@@ -129,6 +129,12 @@ const ProjectsArray = [
         img={<img src={images['calculator_gui.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
         languageList={[LanguageDictionary.java]}
         route={'/JavaCalculatorProject'}/>,
+    <Project 
+        title={'Fruit Game'} 
+        description={''} 
+        img={<img src={images['fruit_game_watermelon.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
+        languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
+        route={'/FruitGameProject'}/>
 ];
 
 // forwards ref of title back to navigation to allow for scrolling to this section

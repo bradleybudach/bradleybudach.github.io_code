@@ -5,6 +5,7 @@ import LevelProject from "./components/project_pages/Level_Project";
 import JavaCalculator_Project from "./components/project_pages/JavaCalculator_Project";
 import WetlandCodeInterpreter_Project from "./components/project_pages/WetlandCodeInterpreter_Project";
 import ImageColorizationAI_Project from "./components/project_pages/ImageColorizationAI_Project";
+import FruitGame_Project from "./components/project_pages/FruitGame_Project";
 import ErrorPage from "./components/ErrorPage";
 
 const Layout = () => {
@@ -26,6 +27,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path={'/JavaCalculatorProject'} element={<JavaCalculator_Project/>}/>
     <Route path={'/WetlandCodeInterpreterProject'} element={<WetlandCodeInterpreter_Project/>}/>
     <Route path={'/ImageColorizationAIProject'} element={<ImageColorizationAI_Project/>}/>
+    <Route path={'/FruitGameProject'} element={<FruitGame_Project/>}/>
     <Route path={'*'} element={<ErrorPage/>}/>
   </Route>
 ));

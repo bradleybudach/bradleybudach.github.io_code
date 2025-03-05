@@ -33,6 +33,12 @@
     padding: 20px;
 }
 
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .image-container {
     display: flex;
     justify-content: center;
