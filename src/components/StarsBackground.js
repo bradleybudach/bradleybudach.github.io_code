@@ -13,7 +13,7 @@ const StarsBackground = () => {
 
         let newStars = [];
         for (let i = 0; i < starCount; i++) { // generates height/50 shooting stars:
-            if (i % 3 == 0) {
+            if (i % 3 === 0) {
                 newStars[i] = <ShootingStar key={i} pageHeight={height}/>;
             } else {
                 newStars[i] = <Star key={i} pageHeight={height}/>;
@@ -60,7 +60,7 @@ const Star = ({pageHeight}) => {
     return (
         <div className='fixed-star' style={{
         opacity: opacity,
-        transition: (opacity == 0) ? '0s' : 'ease-out ' + (Math.random()*0.5+0.5) + 's',
+        transition: (opacity === 0) ? '0s' : 'ease-out ' + (Math.random()*0.5+0.5) + 's',
         left: xPos, 
         top: yPos,
         animationDuration: (Math.random() > 0.5) ? '2s' : 'unset',
@@ -136,7 +136,7 @@ const ShootingStar = ({pageHeight}) => {
     // returns star with small variation in animation transition timing:
     return (
         <div className='shooting-star' style={{
-        transition: (opacity == 0) ? '0s' : 'ease-out ' + (Math.random()*0.5+0.5) + 's',
+        transition: (opacity === 0) ? '0s' : 'ease-out ' + (Math.random()*0.5+0.5) + 's',
         left: xPos, 
         top: yPos,
         opacity: opacity,
