@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route, ScrollRestoration, Outlet } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route, ScrollRestoration, Outlet, useLocation } from "react-router-dom";
 import HomePage from './components/HomePage'
 import VoicePhotos_Project from './components/project_pages/VoicePhotos_Project';
 import LevelProject from "./components/project_pages/Level_Project";
@@ -7,8 +7,17 @@ import WetlandCodeInterpreter_Project from "./components/project_pages/WetlandCo
 import ImageColorizationAI_Project from "./components/project_pages/ImageColorizationAI_Project";
 import FruitGame_Project from "./components/project_pages/FruitGame_Project";
 import ErrorPage from "./components/ErrorPage";
+import { trackPageView } from "./components/anylitics";
+import { useEffect } from "react";
 
 const Layout = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log("tracking location!! " + location.pathname);
+    trackPageView(location.pathname);
+  }, [location]);
+
   return (<>
       <ScrollRestoration
       getKey={(location) => {
@@ -37,5 +46,18 @@ function App() {
   <RouterProvider router={router}/>
   );
 }
+
+// function AnalyticsWrapper() {
+  
+//   // return <App />;
+// }
+
+// export default function Root() {
+//   return (
+//     <RouterProvider router={router}>
+//       <AnalyticsWrapper />
+//     </RouterProvider>
+//   );
+// }
 
 export default App;

@@ -6,6 +6,7 @@ import { throttle } from 'lodash';
 import { useNavigate } from 'react-router-dom';
 import HoverButton from './HoverButton';
 import { images } from './Images';
+import { trackEvent } from './anylitics';
 
 // Dictionary for possible languages to display on projects
 export const LanguageDictionary = {
@@ -60,7 +61,10 @@ const Project = ({title, description, img, languageList, route}) => {
         setIsHovering(false);
     };
 
-    const routeToProject = () => {
+    const routeToProject = (event) => {
+        event.stopPropagation();
+        console.log("tracking button click");
+        trackEvent('button', 'click', title);
         navigate(route);
     };
 
