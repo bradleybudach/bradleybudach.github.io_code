@@ -62,9 +62,6 @@ const Project = ({title, description, img, languageList, route}) => {
     };
 
     const routeToProject = (event) => {
-        event.stopPropagation();
-        console.log("tracking button click");
-        trackEvent('button', 'click', title);
         navigate(route);
     };
 

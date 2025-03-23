@@ -14,7 +14,6 @@ const Layout = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.log("tracking location!! " + location.pathname);
     trackPageView(location.pathname);
   }, [location]);
 
@@ -46,18 +45,5 @@ function App() {
   <RouterProvider router={router}/>
   );
 }
-
-// function AnalyticsWrapper() {
-  
-//   // return <App />;
-// }
-
-// export default function Root() {
-//   return (
-//     <RouterProvider router={router}>
-//       <AnalyticsWrapper />
-//     </RouterProvider>
-//   );
-// }
 
 export default App;
