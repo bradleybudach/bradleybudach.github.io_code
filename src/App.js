@@ -6,9 +6,12 @@ import JavaCalculator_Project from "./components/project_pages/JavaCalculator_Pr
 import WetlandCodeInterpreter_Project from "./components/project_pages/WetlandCodeInterpreter_Project";
 import ImageColorizationAI_Project from "./components/project_pages/ImageColorizationAI_Project";
 import FruitGame_Project from "./components/project_pages/FruitGame_Project";
+import ProjectTracking_Project from "./components/project_pages/ProjectTracking_Project";
 import ErrorPage from "./components/ErrorPage";
 import { trackPageView } from "./components/anylitics";
-import { useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
+
+export const ShowMoreProjectsContext = createContext(null);
 
 const Layout = () => {
   const location = useLocation();
@@ -36,13 +39,18 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path={'/WetlandCodeInterpreterProject'} element={<WetlandCodeInterpreter_Project/>}/>
     <Route path={'/ImageColorizationAIProject'} element={<ImageColorizationAI_Project/>}/>
     <Route path={'/FruitGameProject'} element={<FruitGame_Project/>}/>
+    <Route path={'/ProjectTrackingProject'} element={<ProjectTracking_Project/>}/>
     <Route path={'*'} element={<ErrorPage/>}/>
   </Route>
 ));
 
 function App() {
+  const [showMoreProjects, setShowMoreProjects] = useState(4);
+
   return (
-  <RouterProvider router={router}/>
+    <ShowMoreProjectsContext.Provider value={[showMoreProjects, setShowMoreProjects]}>
+      <RouterProvider router={router}/>
+    </ShowMoreProjectsContext.Provider>
   );
 }
 

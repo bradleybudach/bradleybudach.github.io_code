@@ -5,6 +5,7 @@ import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton';
 import { images } from '../Images';
 import FadeInWrapper from '../FadeInWrapper';
+import { Footer } from '../HomePage';
 
 const languageList = [LanguageDictionary.cPlusPlus, LanguageDictionary.python];
 const githubLink = 'https://github.com/bradleybudach/CircuitPlaygroundDigitalLevel';
@@ -99,9 +100,7 @@ const LevelProject = (props) => {
             <HoverButton text={'Source Code'} link={githubLink} target={'_blank'} width={170} style={{margin: 20}}/>
         </div>
     </div>
-    <div className='footer'>
-        <p>&copy; Bradley Budach 2023</p>
-    </div>
+    <Footer/>
     </>
     );
 }

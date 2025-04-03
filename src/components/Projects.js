@@ -1,4 +1,4 @@
-import React, { useRef, useState, forwardRef } from 'react';
+import React, { useRef, useState, forwardRef, useContext } from 'react';
 import AnimatedStar from './AnimatedStar';
 import '../styles/Projects.css';
 import '../styles/Theme.css';
@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import HoverButton from './HoverButton';
 import { images } from './Images';
 import { trackEvent } from './anylitics';
+import { ShowMoreProjectsContext } from '../App';
 
 // Dictionary for possible languages to display on projects
 export const LanguageDictionary = {
@@ -125,6 +126,12 @@ const ProjectsArray = [
         route={'/ImageColorizationAIProject'}
         />,
     <Project 
+        title={'GIS Project Tracking Tool'} 
+        description={'A project management tool written in python to interface with ArcGIS PRO and ArcGIS Online. This tool creates progress tracking dashboards and updates with progress throughout a project.'} 
+        img={<img src={images['project_tracking_map.png']} alt='Project Tracking Dashboard Map'/>}
+        languageList={[LanguageDictionary.python]}
+        route={'/ProjectTrackingProject'}/>,
+    <Project 
         title={'Java Calculator'} 
         description={'A calculator built using purely Java. It has the capability to solve expressions respecting order of operations, including custom functions.'} 
         img={<img src={images['calculator_gui.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
@@ -140,9 +147,12 @@ const ProjectsArray = [
 
 // forwards ref of title back to navigation to allow for scrolling to this section
 const ProjectsSection = forwardRef((props, ref) => {
+    // show more projects context:
+    const [showProjectsContext, setShowMoreProjects] = useContext(ShowMoreProjectsContext);
+
     const starTarget = useRef(null); // Ref used for AnimatedStar
     const [isComponentVisible, setIsComponentVisible] = useState(false); // visibility used for appearance animations
-    const [projectsDisplayedCount, setProjectsDisplayedCount] = useState(4); // how many projects to display on the page
+    const [projectsDisplayedCount, setProjectsDisplayedCount] = useState(showProjectsContext ?? 4); // how many projects to display on the page
 
     // callback function from AnimatedStar
     const starAnimEvent = (visibility) => { 
@@ -150,7 +160,9 @@ const ProjectsSection = forwardRef((props, ref) => {
     };
 
     const showMoreProjects = () => {
-        setProjectsDisplayedCount(Math.min(projectsDisplayedCount + 4, ProjectsArray.length));
+        const newProjectCount = Math.min(projectsDisplayedCount + 4, ProjectsArray.length);
+        setProjectsDisplayedCount(newProjectCount);
+        setShowMoreProjects(newProjectCount);
         setTimeout(() => {  window.dispatchEvent(new Event('resize')); }, 100); // wait slighly to give page time to update before resize event
     };
 

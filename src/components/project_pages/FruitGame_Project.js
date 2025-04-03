@@ -5,6 +5,7 @@ import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton';
 import { images } from '../Images';
 import FadeInWrapper from '../FadeInWrapper';
+import { Footer } from '../HomePage';
 
 const languageList = [LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript];
 const githubLink = 'https://github.com/bradleybudach/WatermelonGame';
@@ -63,8 +64,8 @@ const FruitGame_Project = (props) => {
                 </div>
                 
                 <div style={{flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'row', alignSelf: 'center'}}>
-                        <img src={images['fruit_game.png']} alt='Wetland Code Interpreter ArcGIS Pro AddIn' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
-                        <img src={images['fruit_game2.png']} alt='Wetland Code Interpreter App GUI screenshot showing home screen' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
+                        <img src={images['fruit_game.png']} alt='Fruit Game main screen' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
+                        <img src={images['fruit_game2.png']} alt='Fruit Game alternate screen' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                 </div>
             </FadeInWrapper>
             
@@ -83,8 +84,8 @@ const FruitGame_Project = (props) => {
 
             <FadeInWrapper className='side-by-side'>
                 <div style={{flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'row', alignSelf: 'center'}}>
-                        <img src={images['fruit_game_watermelon.png']} alt='Wetland Code Interpreter App GUI screenshot showing parsed code' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
-                        <img src={images['fruit_game_over.png']} alt='Wetland Code Interpreter App GUI screenshot showing invalid code message' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
+                        <img src={images['fruit_game_watermelon.png']} alt='Fruit Game screen showing watermelon fruit' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
+                        <img src={images['fruit_game_over.png']} alt='Game over screen for fruit game' style={{margin: 10, maxHeight: 600, maxWidth: '50%'}}/>
                 </div>
                 <div className='project-text-container'>
                     <h3>LESSONS LEARNED</h3>
@@ -108,9 +109,7 @@ const FruitGame_Project = (props) => {
         
     </div>
 
-    <div className='footer'>
-        <p style={{margin: 5, padding: 0}}>&copy; Bradley Budach 2023</p>
-    </div>
+    <Footer/>
     </>
     );
 }

@@ -5,6 +5,7 @@ import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton';
 import { images } from '../Images';
 import FadeInWrapper from '../FadeInWrapper';
+import { Footer } from '../HomePage';
 
 const languageList = [LanguageDictionary.java];
 const githubLink = 'https://github.com/bradleybudach/JavaCalculator';
@@ -104,9 +105,7 @@ const JavaCalculator_Project = (props) => {
         
     </div>
 
-    <div className='footer'>
-        <p style={{margin: 5, padding: 0}}>&copy; Bradley Budach 2023</p>
-    </div>
+    <Footer/>
     </>
     );
 }

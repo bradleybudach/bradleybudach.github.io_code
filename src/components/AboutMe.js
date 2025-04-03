@@ -32,10 +32,11 @@ const AboutMeSection = forwardRef((props, ref) => {
                     <img src={images['profile.png']} alt='Profile'/>
                 </div>
                 <div style={{flex: 4}}><p>
-                    Hi! My name is Bradley Budach. I have been an aspiring programmer since 4th grade.
-                    My passion for programming from an early age has encouraged me to seek out new knowledge, experiment with new languages and projects, and pursue a degree in Computer Science.
+                    Hi! My name is Bradley Budach. I have had a passion for programming from a young age. 
+                    This passion has encouraged me to seek out new knowledge, experiment with new languages and projects, and pursue my degree in Computer Science.
                     I am currently a Senior at Winona State University earning my Bachelor's Degree in Computer Science with a 4.0 GPA.
-                    I have experience working on both personal projects, and professionally making projects for a Geospatial Services as an intern.
+                    I have experience working on both personal projects, and professionally making projects for a Geospatial Services as an intern. 
+                    I also have experience teaching others Computer Science skills as a CS Tutor for Winona State University.
                     With this experience, my degree, years of self-taught programming skills, and my willingness to always be creative and learn new things, I am the perfect canidate for a Software Development position.
                 </p></div>
             </div>

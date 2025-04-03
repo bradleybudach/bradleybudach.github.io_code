@@ -5,6 +5,7 @@ import { LanguageDictionary } from '../Projects';
 import HoverButton from '../HoverButton';
 import { images } from '../Images';
 import FadeInWrapper from '../FadeInWrapper';
+import { Footer } from '../HomePage';
 
 const languageList = [LanguageDictionary.python, LanguageDictionary.keras, LanguageDictionary.tensorflow];
 const githubLink = 'https://github.com/bradleybudach/ImageColorizationAI';
@@ -66,8 +67,8 @@ const ImageColorizationAI_Project = (props) => {
             
             <FadeInWrapper className='project-text-container'>
                 <h3>MODEL RESULTS</h3>
-                <div className='image-container' >
-                    <img src={images['colorizer_ai_results.png']} alt='Results of the AI model' style={{maxWidth: '1000px'}}/>
+                <div className='image-container'>
+                    <img src={images['colorizer_ai_results.png']} alt='Results of the AI model' style={{maxWidth: 'min(100%, 1000px)'}}/>
                 </div>
             </FadeInWrapper>
 
@@ -109,9 +110,7 @@ const ImageColorizationAI_Project = (props) => {
         
     </div>
 
-    <div className='footer'>
-        <p style={{margin: 5, padding: 0}}>&copy; Bradley Budach 2023</p>
-    </div>
+    <Footer/>
     </>
     );
 }

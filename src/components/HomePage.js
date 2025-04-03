@@ -79,10 +79,10 @@ const Header = ({navigationFunction}) => {
 };
 
 // defines page footer
-const Footer = forwardRef((props, ref) => {
+export const Footer = forwardRef((props, ref) => {
     return (
         <div className='footer' ref={ref}>
-            <p>&copy; Bradley Budach 2023</p>
+            <p>&copy; Bradley Budach 2025</p>
         </div>
     );
 });
