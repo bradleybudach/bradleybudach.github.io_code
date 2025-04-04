@@ -136,7 +136,7 @@ const ProjectsArray = [
     <Project
         title={'Image Colorization AI'}
         description={'A machine learning project that attempts to colorize grayscale images. This project uses deep learning frameworks to predict missing color values from images.'}
-        img={<img src={images['colorizer_ai_overview.png']} alt={'Image Colorization Example'}/>}
+        img={<img src={images['colorizer_ai_overview.png']} alt={'Image Colorization Example'} style={{objectFit: 'fill'}}/>}
         languageList={[LanguageDictionary.python, LanguageDictionary.keras, LanguageDictionary.tensorflow]}
         category={[Category.python, Category.ml, Category.data]}
         route={'/ImageColorizationAIProject'}
@@ -144,7 +144,7 @@ const ProjectsArray = [
     <Project 
         title={'GIS Project Tracking Tool'} 
         description={'A project management tool written in python to interface with ArcGIS PRO and ArcGIS Online. This tool creates progress tracking dashboards and updates with progress throughout a project.'} 
-        img={<img src={images['project_tracking_map.png']} alt='Project Tracking Dashboard Map'/>}
+        img={<img src={images['project_tracking_map.png']} alt='Project Tracking Dashboard Map' style={{objectFit: 'fill'}}/>}
         languageList={[LanguageDictionary.python]}
         category={[Category.gis, Category.python, Category.data]}
         route={'/ProjectTrackingProject'}/>,
@@ -156,9 +156,16 @@ const ProjectsArray = [
         category={[Category.java, Category.data]}
         route={'/JavaCalculatorProject'}/>,
     <Project 
+        title={'My Portfolio Website'} 
+        description={'This website was built to showcase both my professional skills and creative designs. Hopefully it accomplishes both!'} 
+        img={<img src={images['portfolio_home.png']} alt='Portfolio main screen' style={{objectFit: 'contain'}}/>}
+        languageList={[LanguageDictionary.react, LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
+        category={[Category.web, Category.react]}
+        route={'/PortfolioProject'}/>,
+    <Project 
         title={'Fruit Game'} 
-        description={''} 
-        img={<img src={images['fruit_game_watermelon.png']} alt='Calculator Application' style={{objectFit: 'contain'}}/>}
+        description={'A simple and fun game made for the web that integrates both physics and graphics rendering tools.'} 
+        img={<img src={images['fruit_game_watermelon.png']} alt='Main game screen' style={{objectFit: 'contain'}}/>}
         languageList={[LanguageDictionary.hmtl, LanguageDictionary.css, LanguageDictionary.javascript]}
         category={[Category.web]}
         route={'/FruitGameProject'}/>

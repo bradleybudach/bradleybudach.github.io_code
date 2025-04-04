@@ -7,6 +7,7 @@ import WetlandCodeInterpreter_Project from "./components/project_pages/WetlandCo
 import ImageColorizationAI_Project from "./components/project_pages/ImageColorizationAI_Project";
 import FruitGame_Project from "./components/project_pages/FruitGame_Project";
 import ProjectTracking_Project from "./components/project_pages/ProjectTracking_Project";
+import Portfolio_Project from "./components/project_pages/Portfolio_Project";
 import ErrorPage from "./components/ErrorPage";
 import { trackPageView } from "./components/anylitics";
 import { createContext, useEffect, useState } from "react";
@@ -40,6 +41,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path={'/ImageColorizationAIProject'} element={<ImageColorizationAI_Project/>}/>
     <Route path={'/FruitGameProject'} element={<FruitGame_Project/>}/>
     <Route path={'/ProjectTrackingProject'} element={<ProjectTracking_Project/>}/>
+    <Route path={'/PortfolioProject'} element={<Portfolio_Project/>}/>
     <Route path={'*'} element={<ErrorPage/>}/>
   </Route>
 ));
